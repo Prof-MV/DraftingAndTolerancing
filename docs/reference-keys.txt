@@ -20,9 +20,7 @@ dimensioning
 chapters-and-sub-chapters
 captioned-figures-and-tables
 fits-and-tolerances
-footnotes-and-citations
-footnotes
-citations
+strength-of-bolt-joint-calculations
 blocks
 equations
 theorems-and-proofs

@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Blocks | A Minimal Book Example</title>
+  <title>Chapter 5 Strength of Bolt Joint Calculations | A Minimal Book Example</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Blocks | A Minimal Book Example" />
+  <meta property="og:title" content="Chapter 5 Strength of Bolt Joint Calculations | A Minimal Book Example" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="Prof-MV/DraftingAndTolerancing" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Blocks | A Minimal Book Example" />
+  <meta name="twitter:title" content="Chapter 5 Strength of Bolt Joint Calculations | A Minimal Book Example" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="strength-of-bolt-joint-calculations.html"/>
-<link rel="next" href="sharing-your-book.html"/>
+<link rel="prev" href="fits-and-tolerances.html"/>
+<link rel="next" href="blocks.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -221,40 +221,129 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="blocks" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Blocks<a href="blocks.html#blocks" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="equations" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Equations<a href="blocks.html#equations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Here is an equation.</p>
-<p><span class="math display" id="eq:binom">\[\begin{equation}
-  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
-  \tag{6.1}
-\end{equation}\]</span></p>
-<p>You may refer to using <code>\@ref(eq:binom)</code>, like see Equation <a href="blocks.html#eq:binom">(6.1)</a>.</p>
+<div id="strength-of-bolt-joint-calculations" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Strength of Bolt Joint Calculations<a href="strength-of-bolt-joint-calculations.html#strength-of-bolt-joint-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="question">
+<p><strong>1)</strong> What is the spring constant of the bolt <span class="math inline">\(k_b\)</span>?</p>
 </div>
-<div id="theorems-and-proofs" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Theorems and proofs<a href="blocks.html#theorems-and-proofs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Labeled theorems can be referenced in text using <code>\@ref(thm:tri)</code>, for example, check out this smart theorem <a href="blocks.html#thm:tri">6.1</a>.</p>
-<div class="theorem">
-<p><span id="thm:tri" class="theorem"><strong>Theorem 6.1  </strong></span>For a right triangle, if <span class="math inline">\(c\)</span> denotes the <em>length</em> of the hypotenuse
-and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> denote the lengths of the <strong>other</strong> two sides, we have
-<span class="math display">\[a^2 + b^2 = c^2\]</span></p>
+<div id="answer">
+<p>The bolt stiffness (<span class="math inline">\(k_b\)</span>) is calculated using the following formula:</p>
+<p><span class="math display">\[k_b = \frac{A_d A_t E}{A_d l_t + A_t l_d}\]</span></p>
+<p>Where the individual parameters are determined as follows:</p>
+<p><strong>Length of the unthreaded portion (<span class="math inline">\(l_d\)</span>):</strong></p>
+<p><span class="math display">\[l_d = L - L_T = 1.5 - (2 \cdot 0.5 + 0.25) = 0.25 \text{ in}\]</span></p>
+<p><strong>Length of the threaded portion (<span class="math inline">\(l_t\)</span>):</strong></p>
+<p><span class="math display">\[l_t = 0.5 + 0.75 + 0.095 - 0.25 = 1.095 \text{ in}\]</span></p>
+<p><strong>Tensile stress area (<span class="math inline">\(A_t\)</span>):</strong></p>
+<p><span class="math display">\[A_t = 0.1599 \text{ in}^2\]</span></p>
+<p><strong>Major diameter area (<span class="math inline">\(A_d\)</span>):</strong></p>
+<p><span class="math display">\[A_d = \frac{\pi}{4}(0.5)^2 = 0.1963 \text{ in}^2\]</span></p>
+<p><strong>Modulus of elasticity (<span class="math inline">\(E\)</span>):</strong></p>
+<p><span class="math display">\[E = 29 \cdot 10^6 \frac{\text{lbf}}{\text{in}^2}\]</span></p>
+<p>Substituting these values back into the main formula for <span class="math inline">\(k_b\)</span>:</p>
+<p><span class="math display">\[k_b = \frac{0.1963 \cdot 0.1599 \cdot 29 \cdot 10^6}{0.1963 \cdot 1.095 + 0.1599 \cdot 0.25} = 3.57 \cdot 10^6 \frac{\text{lbf}}{\text{in}}\]</span></p>
 </div>
-<p>Read more here <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html" class="uri">https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html</a>.</p>
+<hr />
+<div id="question">
+<p><strong>2)</strong> What is the spring constant of the compressed joint <span class="math inline">\(k_m\)</span>?</p>
 </div>
-<div id="callout-blocks" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Callout blocks<a href="blocks.html#callout-blocks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html</a></p>
+<div id="answer">
+<p><strong>Spring Rate of Compressed Joint Case : <span class="math inline">\(3D_{head} &lt; D_{joint}\)</span></strong></p>
+<p>The area <span class="math inline">\(A_s\)</span> is given by the formula:
+<span class="math display">\[ A_s = \frac{\pi}{4} \cdot \left[ (D_H + 0.1 l_j)^2 - D_h^2 \right] \]</span></p>
+<p>Given values:
+<span class="math display">\[ D_h = 0.510 \, \text{in} \]</span>
+<span class="math display">\[ D_H = W \text{ on Page 8} = 1.5 \cdot 0.5 = 0.75 \, \text{in} \]</span>
+<span class="math display">\[ l_j = 0.5 + 0.75 + 0.095 = 1.345 \, \text{in} \]</span>
+where <span class="math inline">\(l_{j}\)</span> is the entire joint length.</p>
+<p>Substituting the values into the area formula:
+<span class="math display">\[ A_s = \frac{\pi}{4} \left[ (0.75 + 0.1 \cdot 1.345)^2 - 0.510^2 \right] = 0.4102 \, \text{in}^2 \]</span></p>
+<p>The stiffness <span class="math inline">\(k_j\)</span> is calculated as:
+<span class="math display">\[ k_j = \frac{E A_s}{l_{material}} \]</span>
+where <span class="math inline">\(l_{material}\)</span> is the length of the substitute cylinder of each material.</p>
+<div id="steel" class="section level3 unnumbered hasAnchor">
+<h3>Steel<a href="strength-of-bolt-joint-calculations.html#steel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Length for steel, combine top plate and washer:
+<span class="math display">\[ l_{steel} = 0.5 + 0.095 \]</span></p>
+<p>Stiffness for steel:
+<span class="math display">\[ k_{steel} = \frac{29 \cdot 10^6 \cdot 0.4102}{(0.5 + 0.095)} = 20 \cdot 10^6 \, \frac{\text{lbf}}{\text{in}} \]</span></p>
+</div>
+<div id="cast-iron" class="section level3 unnumbered hasAnchor">
+<h3>Cast Iron<a href="strength-of-bolt-joint-calculations.html#cast-iron" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Given values for cast iron:
+<span class="math display">\[ E = 13 \cdot 10^6 \, \text{psi} \]</span>
+<span class="math display">\[ l_{cast iron} = 0.75 \]</span></p>
+<p>Stiffness for cast iron:
+<span class="math display">\[ k_{iron} = \frac{13 \cdot 10^6 \cdot 0.4102}{0.75} = 7.1 \cdot 10^6 \, \frac{\text{lbf}}{\text{in}} \]</span></p>
+</div>
+<div id="combine-springs-in-series" class="section level3 unnumbered hasAnchor">
+<h3>Combine springs in series:<a href="strength-of-bolt-joint-calculations.html#combine-springs-in-series" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The equivalent spring constant <span class="math inline">\(k_m\)</span> is found using:
+<span class="math display">\[ \frac{1}{k_m} = \frac{1}{k_1} + \frac{1}{k_2} + \dots + \frac{1}{k_n} \]</span></p>
+<p>Substituting the calculated stiffness values:
+<span class="math display">\[ \frac{1}{k_m} = \frac{1}{20 \cdot 10^6} + \frac{1}{7.1 \cdot 10^6} = \frac{1}{1.908 \cdot 10^7} \]</span></p>
+<p>Solving for <span class="math inline">\(k_m\)</span>:
+<span class="math display">\[ k_m = 5.24 \cdot 10^6 \, \frac{\text{lbf}}{\text{in}} \]</span></p>
+<p><strong>Spring rate of compressed joint:</strong>
+<span class="math display">\[ k_m = 5.24 \cdot 10^6 \, \frac{\text{lbf}}{\text{in}} \]</span></p>
+</div>
+</div>
+<hr />
+<div id="question">
+<p><strong>3)</strong> What is the initial load in the bolt <span class="math inline">\(F_i\)</span>?</p>
+</div>
+<div id="answer">
+<div id="joint-stiffness-constant-c" class="section level3 unnumbered hasAnchor">
+<h3>Joint Stiffness Constant (C)<a href="strength-of-bolt-joint-calculations.html#joint-stiffness-constant-c" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The stiffness constant <strong>C</strong> defines how the external load is shared between the bolt and the clamped members:
+<span class="math display">\[ C = \frac{k_b}{k_b + k_m} = \frac{3.57 \cdot 10^6}{3.57 \cdot 10^6 + 5.24 \cdot 10^6} = 0.405 \]</span></p>
+</div>
+<div id="load-and-preload-parameters" class="section level3 unnumbered hasAnchor">
+<h3>Load and Preload Parameters<a href="strength-of-bolt-joint-calculations.html#load-and-preload-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Portion of Load (P):</strong> The external load shared by the individual fastener:
+<span class="math display">\[ P = \frac{10000 \text{ lbf}}{4} = 2500 \text{ lbf} \]</span></li>
+<li><strong>Initial Preload (<span class="math inline">\(F_i\)</span>):</strong> Calculated based on the <em>Fastenal Technical Reference Guide (Appendix 1)</em>:
+<span class="math display">\[ F_i = 0.75 \cdot 0.1599 \cdot 85000 = 10194 \text{ lbf} \]</span></li>
+</ul>
+</div>
+</div>
+<hr />
+<div id="question">
+<p><strong>4)</strong> What is the tensile force in the bolt <span class="math display">\[F_b\]</span>?</p>
+</div>
+<div id="answer">
+<div id="resulting-forces" class="section level3 unnumbered hasAnchor">
+<h3>Resulting Forces<a href="strength-of-bolt-joint-calculations.html#resulting-forces" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>1. Force in the Bolt (<span class="math inline">\(F_b\)</span>):</strong>
+The total tension in the bolt after the external load is applied:
+<span class="math display">\[ F_b = C \cdot P + F_i \]</span>
+<span class="math display">\[ F_b = 0.405 \cdot 2500 + 10194 = 11207 \text{ lbf} \]</span></p>
+</div>
+</div>
+<hr />
+<div id="question">
+<p><strong>5)</strong> What is the compression force in the members <span class="math inline">\(F_m\)</span>?</p>
+</div>
+<div id="answer">
+<p>** Force in the Member (<span class="math inline">\(F_m\)</span>):**
+The force remaining in the clamped members:
+<span class="math display">\[ F_m = (1 - C) \cdot P - F_i \]</span>
+<span class="math display">\[ F_m = (1 - 0.405) \cdot 2500 - 10194 = -8707 \text{ lbf} \]</span></p>
+<blockquote>
+<p><strong>Note:</strong> The negative result for <span class="math inline">\(F_m\)</span> indicates that the members are in <strong>compression</strong>.</p>
+</blockquote>
+</div>
+<hr />
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="strength-of-bolt-joint-calculations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sharing-your-book.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="fits-and-tolerances.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="blocks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -285,7 +374,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/Prof-MV/DraftingAndTolerancing/blob/master/05-blocks.Rmd",
+    "link": "https://github.com/Prof-MV/DraftingAndTolerancing/blob/master/04-Bolt-Joint-Calculations.Rmd",
     "text": "Edit"
   },
   "history": {
