@@ -3,7 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">Design for Manufacturing</a></li>
+        <li><a href="./">Drafting and Tolerancing</a></li>
         <li class="toc-logo"><a href="./"><img src="images/Fanshawe.png"></a></li>
     edit: https://github.com/Prof-MV/DraftingAndTolerancing/blob/master/%s
     download: ["pdf", "epub"]

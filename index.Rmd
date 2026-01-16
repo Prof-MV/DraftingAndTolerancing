@@ -1,6 +1,6 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "Drafting and Tolerancing"
+author: "Martin Volkening"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -15,7 +15,7 @@ link-citations: yes
 github-repo: Prof-MV/DraftingAndTolerancing
 ---
 
-# About
+# About {-}
 
 This book compiles information and guidelines about drafting, dimensioning and tolerancing of technical drawings. 
 

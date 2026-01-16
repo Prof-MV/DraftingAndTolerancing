@@ -1,8 +1,4 @@
-# Drafting
-
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
-
-## Interpreting and Creating Drawings
+# Interpreting and Creating Drawings {#interpreting}
 
 ### Introduction to Engineering Working Drawings [@Hijazi]
 
@@ -69,7 +65,7 @@ knitr::include_graphics("images/7-2-1-1536x1192.png")
 * **Finish**: Displays any part finish specifications. These may be indicated for specific regions using leader lines.
 * **Application**: Used to identify the assemblies on which the part is used.
 
-##### Tolerances
+##### Default Tolerances
 
 **Default Tolerance Box**: Displays the amount of variation allowed on dimension values that do not have a specific tolerance attached to them. These are usually categorized by the number of decimal places.
 
@@ -93,12 +89,3 @@ knitr::include_graphics("images/7-3-768x508.png")
 
 * **Zones**: Sheet zones (using letters and numbers along the border) help locate particular details or views, which is especially beneficial on large-format drawings.
 
-
-
--------------------------------------------------------------------------------
-
-### Dimensioning and Tolerancing
-
-Chapters and sections are numbered by default. To un-number a heading, add a `{.unnumbered}` or the shorter `{-}` at the end of the heading, like in this section.
-
-## Geometric Dimensioning and Tolerancing (GD&T)

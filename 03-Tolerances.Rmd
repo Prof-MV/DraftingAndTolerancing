@@ -1,6 +1,7 @@
 # Tolerances in Mechanical Design {#tolerances}
 
-In mechanical engineering and manufacturing, no part can be produced to exact absolute dimensions every single time due to inherent variations in machinery, material properties, and environmental conditions. Therefore, designers must specify an acceptable range of variation. This chapter explores the fundamental concepts of tolerances, basic sizes, and allowances, as defined in standards such as ASME Y14.5 [@ASME_Y14_5].
+
+In mechanical engineering and manufacturing, no part can be produced to exact absolute dimensions every single time due to inherent variations in machinery, material properties, and environmental conditions. Therefore, designers must specify an acceptable range of variation. This chapter explores the fundamental concepts of tolerances, basic sizes, and allowances, as defined in standards such as ASME Y14.5 [@ASME_Y145_2018].
 
 ## Fundamental Concepts
 
@@ -9,7 +10,6 @@ To understand tolerancing, we must first define three key terms:
 1.  **Basic Size**: The theoretical exact size from which limits of size are derived by the application of allowances and tolerances.
 2.  **Tolerance**: The total amount a specific dimension is permitted to vary. It is the difference between the maximum and minimum limits.
 3.  **Allowance**: An intentional difference between the maximum material limits of mating parts (e.g., the tightest fit between a shaft and a hole).
-
 
 
 Mathematically, if we denote the Upper Limit as $L_{max}$ and the Lower Limit as $L_{min}$, the tolerance $T$ is calculated as:
@@ -153,8 +153,6 @@ When dimensioning in millimeters, the following rules apply:
     * *Example*: $25 \pm 0.25$ (The basic size has 0 decimals; tolerance has 2).
 * **Unilateral Zero**: A zero in a unilateral tolerance is written as a single digit "0" without a plus or minus sign.
     * *Example*: $30 \,\, {}^{+0.1}_{0}$
-
-
 
 ### Inch Rules (Imperial)
 
