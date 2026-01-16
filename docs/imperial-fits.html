@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Engineering Fits and Tolerances | Drafting and Tolerancing</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Engineering Fits and Tolerances | Drafting and Tolerancing" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="Prof-MV/DraftingAndTolerancing" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Engineering Fits and Tolerances | Drafting and Tolerancing" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Martin Volkening" />
+
+
+<meta name="date" content="2026-01-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="gdandt.html"/>
+<link rel="next" href="sharing-your-book.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Drafting and Tolerancing</a></li>
+<li class="toc-logo"><a href="./"><img src="images/Fanshawe.png"></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="interpreting.html"><a href="interpreting.html"><i class="fa fa-check"></i><b>1</b> Interpreting and Creating Drawings</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="interpreting.html"><a href="interpreting.html#introduction-to-engineering-working-drawings-hijazi"><i class="fa fa-check"></i><b>1.0.1</b> Introduction to Engineering Working Drawings <span class="citation">(Hijazi 2025)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="dimensioningrules.html"><a href="dimensioningrules.html"><i class="fa fa-check"></i><b>2</b> Dimensioning Rules</a></li>
+<li class="chapter" data-level="3" data-path="tolerances.html"><a href="tolerances.html"><i class="fa fa-check"></i><b>3</b> Tolerances in Mechanical Design</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="tolerances.html"><a href="tolerances.html#fundamental-concepts"><i class="fa fa-check"></i><b>3.1</b> Fundamental Concepts</a></li>
+<li class="chapter" data-level="3.2" data-path="tolerances.html"><a href="tolerances.html#tolerancing-methods"><i class="fa fa-check"></i><b>3.2</b> Tolerancing Methods</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="tolerances.html"><a href="tolerances.html#limit-dimensions"><i class="fa fa-check"></i><b>3.2.1</b> Limit Dimensions</a></li>
+<li class="chapter" data-level="3.2.2" data-path="tolerances.html"><a href="tolerances.html#plus-minus-tolerancing"><i class="fa fa-check"></i><b>3.2.2</b> Plus-Minus Tolerancing</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="tolerances.html"><a href="tolerances.html#specifying-limits-in-tolerancing"><i class="fa fa-check"></i><b>3.3</b> Specifying Limits in Tolerancing</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="tolerances.html"><a href="tolerances.html#tolerance-with-two-limits-limit-dimensioning"><i class="fa fa-check"></i><b>3.3.1</b> Tolerance with Two Limits (Limit Dimensioning)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="tolerances.html"><a href="tolerances.html#tolerance-with-one-limit-single-limit"><i class="fa fa-check"></i><b>3.3.2</b> Tolerance with One Limit (Single Limit)</a></li>
+<li class="chapter" data-level="3.3.3" data-path="tolerances.html"><a href="tolerances.html#comparison-summary"><i class="fa fa-check"></i><b>3.3.3</b> Comparison Summary</a></li>
+<li class="chapter" data-level="3.3.4" data-path="tolerances.html"><a href="tolerances.html#visualizing-tolerance-distributions"><i class="fa fa-check"></i><b>3.3.4</b> Visualizing Tolerance Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="tolerances.html"><a href="tolerances.html#drawing-standards-metric-vs.-inch"><i class="fa fa-check"></i><b>3.4</b> Drawing Standards: Metric vs. Inch</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="tolerances.html"><a href="tolerances.html#metric-rules-si"><i class="fa fa-check"></i><b>3.4.1</b> Metric Rules (SI)</a></li>
+<li class="chapter" data-level="3.4.2" data-path="tolerances.html"><a href="tolerances.html#inch-rules-imperial"><i class="fa fa-check"></i><b>3.4.2</b> Inch Rules (Imperial)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="gdandt.html"><a href="gdandt.html"><i class="fa fa-check"></i><b>4</b> Geometric Dimensioning and Tolerancing (GD&amp;T)</a></li>
+<li class="chapter" data-level="5" data-path="imperial-fits.html"><a href="imperial-fits.html"><i class="fa fa-check"></i><b>5</b> Engineering Fits and Tolerances</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="imperial-fits.html"><a href="imperial-fits.html#the-concept-of-basis-systems"><i class="fa fa-check"></i><b>5.1</b> The Concept of Basis Systems</a></li>
+<li class="chapter" data-level="5.2" data-path="imperial-fits.html"><a href="imperial-fits.html#categories-of-imperial-fits"><i class="fa fa-check"></i><b>5.2</b> Categories of Imperial Fits</a>
+<ul>
+<li class="chapter" data-level="" data-path="imperial-fits.html"><a href="imperial-fits.html#a-clearance-fits"><i class="fa fa-check"></i>a) Clearance Fits</a></li>
+<li class="chapter" data-level="" data-path="imperial-fits.html"><a href="imperial-fits.html#b-interference-fits"><i class="fa fa-check"></i>b) Interference Fits</a></li>
+<li class="chapter" data-level="" data-path="imperial-fits.html"><a href="imperial-fits.html#c-transition-fits-locational"><i class="fa fa-check"></i>c) Transition Fits (Locational)</a></li>
+<li class="chapter" data-level="5.2.1" data-path="imperial-fits.html"><a href="imperial-fits.html#description-of-fits"><i class="fa fa-check"></i><b>5.2.1</b> Description of Imperial Fits</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>6</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>6.1</b> Publishing</a></li>
+<li class="chapter" data-level="6.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>6.2</b> 404 pages</a></li>
+<li class="chapter" data-level="6.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Drafting and Tolerancing</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="imperial-fits" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Engineering Fits and Tolerances<a href="imperial-fits.html#imperial-fits" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In precision manufacturing, the relationship between two mating parts—typically a hole and a shaft—is defined by the “fit.” Understanding imperial fits is crucial for ensuring that mechanical assemblies function correctly, whether they need to slide freely or be permanently locked together.</p>
+<div id="the-concept-of-basis-systems" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> The Concept of Basis Systems<a href="imperial-fits.html#the-concept-of-basis-systems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before diving into the types of fits, we must establish the reference point for the tolerance. In the imperial system, we generally use one of two approaches:</p>
+<ul>
+<li><strong>Hole Basis System</strong>: The hole size is kept constant (usually at the basic size), and the shaft size is varied to achieve the desired fit. This is the most common industry standard because it is easier to drill or ream a hole to a standard size than it is to precision-grind a shaft.</li>
+<li><strong>Shaft Basis System</strong>: The shaft size is kept constant, and the hole size is varied. This is typically reserved for specific cases, such as when a single shaft must host multiple components with different fit requirements.</li>
+</ul>
+<hr />
+</div>
+<div id="categories-of-imperial-fits" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Categories of Imperial Fits<a href="imperial-fits.html#categories-of-imperial-fits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Imperial fits are categorized by their function and the resulting “allowance” (the minimum clearance or maximum interference) between parts.</p>
+<div id="a-clearance-fits" class="section level3 unnumbered hasAnchor">
+<h3>a) Clearance Fits<a href="imperial-fits.html#a-clearance-fits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Clearance fits always provide a positive space between the hole and the shaft. This ensures the parts can move or rotate.</p>
+<ul>
+<li><strong>Running or Sliding Fits (RC)</strong>: Intended to provide a similar running performance with suitable lubrication allowance.</li>
+<li><strong>Locational Clearance Fits (LC)</strong>: Designed for parts that are normally stationary but can be freely assembled or disassembled.</li>
+</ul>
+</div>
+<div id="b-interference-fits" class="section level3 unnumbered hasAnchor">
+<h3>b) Interference Fits<a href="imperial-fits.html#b-interference-fits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Interference fits (or “press fits”) occur when the shaft is intentionally larger than the hole.</p>
+<ul>
+<li><strong>Force and Shrink Fits (FN)</strong>: These require significant force or thermal expansion/contraction (e.g., heating the hole or freezing the shaft) to assemble. They are used for permanent attachments.</li>
+</ul>
+</div>
+<div id="c-transition-fits-locational" class="section level3 unnumbered hasAnchor">
+<h3>c) Transition Fits (Locational)<a href="imperial-fits.html#c-transition-fits-locational" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Transition fits (<strong>LT</strong>) are the middle ground. Depending on the actual size of the manufactured parts within their tolerance zones, the result could be either a slight clearance or a slight interference. These are used where accurate location is important, but a small amount of clearance or interference is permissible.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="images/C20_F02_pg145.jpg" alt="Fit Categories [@jensen2015interpreting]" width="75%" />
+<p class="caption">
+Figure 5.1: Fit Categories <span class="citation">(<a href="#ref-jensen2015interpreting">Branoff, Jensen, and Helsel 2015</a>)</span>
+</p>
+</div>
+</div>
+<div id="description-of-fits" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Description of Imperial Fits<a href="imperial-fits.html#description-of-fits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The classes of fits are arranged in three general groups: running and sliding fits, locational fits, and force fits. These classifications ensure that mechanical components interact with the intended level of friction, precision, and permanence <span class="citation">(<a href="#ref-jensen2015interpreting">Branoff, Jensen, and Helsel 2015</a>)</span>.</p>
+<div id="running-and-sliding-fits-rc" class="section level4 hasAnchor" number="5.2.1.1">
+<h4><span class="header-section-number">5.2.1.1</span> Running and Sliding Fits (RC)<a href="imperial-fits.html#running-and-sliding-fits-rc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Running and sliding fits are intended to provide a similar running performance, with suitable lubrication allowance, throughout the range of sizes. The clearances for the first two classes, used chiefly as slide fits, increase more slowly with the diameter than for the other classes so that accurate location is maintained even at the expense of free relative motion.</p>
+<ul>
+<li><strong>RC 1 Close sliding fits</strong>: Intended for the accurate location of parts that must assemble without perceptible play.</li>
+<li><strong>RC 2 Sliding fits</strong>: Intended for accurate location, but with greater maximum clearance than class RC 1. Parts move and turn easily but are not intended to run freely; larger sizes may seize with small temperature changes.</li>
+<li><strong>RC 3 Precision running fits</strong>: The closest fits expected to run freely. Intended for precision work at slow speeds and light journal pressures. Not suitable where appreciable temperature differences are likely.</li>
+<li><strong>RC 4 Close running fits</strong>: Intended chiefly for running fits on accurate machinery with moderate surface speeds and journal pressures, where accurate location and minimum play are desired.</li>
+<li><strong>RC 5 and RC 6 Medium running fits</strong>: Intended for higher running speeds, heavy journal pressures, or both.</li>
+<li><strong>RC 7 Free running fits</strong>: Intended for use where accuracy is not essential, or where large temperature variations are likely to be encountered.</li>
+<li><strong>RC 8 and RC 9 Loose running fits</strong>: Intended for use where wide commercial tolerances may be necessary, together with an allowance on the external member.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="images/ANSI_ASME_B41_RC1_4.png" alt="[RC1 to RC4](images/ANSI_ASME_B41_RC1_4.png)" width="75%" />
+<p class="caption">
+Figure 5.2: <a href="images/ANSI_ASME_B41_RC1_4.png">RC1 to RC4</a>
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<img src="images/ANSI_ASME_B41_RC5_9.png" alt="[RC5 to RC9](images/ANSI_ASME_B41_RC5_9.png)" width="75%" />
+<p class="caption">
+Figure 5.3: <a href="images/ANSI_ASME_B41_RC5_9.png">RC5 to RC9</a>
+</p>
+</div>
+<hr />
+</div>
+<div id="locational-fits-lc-lt-and-ln" class="section level4 hasAnchor" number="5.2.1.2">
+<h4><span class="header-section-number">5.2.1.2</span> Locational Fits (LC, LT, and LN)<a href="imperial-fits.html#locational-fits-lc-lt-and-ln" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Locational fits are intended to determine only the location of the mating parts; they may provide rigid or accurate location (as with interference fits) or provide some freedom of location (as with clearance fits).</p>
+<ul>
+<li><strong>LC Locational clearance fits</strong>: Intended for parts that are normally stationary but can be freely assembled or disassembled. They range from snug fits to looser fastener fits.</li>
+<li><strong>LT Locational transition fits</strong>: A compromise between clearance and interference for applications where accuracy of location is important but a small amount of either clearance or interference is permissible.</li>
+<li><strong>LN Locational interference fits</strong>: Used where accuracy of location is of prime importance, providing rigidity and alignment with no special requirements for bore pressure.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="images/ANSI_ASME_B41_LC1_5.png" alt="[LC1 to LC5](images/ANSI_ASME_B41_LC1_5.png)" width="75%" />
+<p class="caption">
+Figure 5.4: <a href="images/ANSI_ASME_B41_LC1_5.png">LC1 to LC5</a>
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<img src="images/ANSI_ASME_B41_LC6_11.png" alt="[LC6 to LC11](images/ANSI_ASME_B41_LC6_11.png)" width="75%" />
+<p class="caption">
+Figure 5.5: <a href="images/ANSI_ASME_B41_LC6_11.png">LC6 to LC11</a>
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<img src="images/ANSI_ASME_B41_LT1_6.png" alt="[LT1 to LT6](images/ANSI_ASME_B41_LT1_6.png)" width="75%" />
+<p class="caption">
+Figure 5.6: <a href="images/ANSI_ASME_B41_LT1_6.png">LT1 to LT6</a>
+</p>
+</div>
+<hr />
+</div>
+<div id="force-fits-fn" class="section level4 hasAnchor" number="5.2.1.3">
+<h4><span class="header-section-number">5.2.1.3</span> Force Fits (FN)<a href="imperial-fits.html#force-fits-fn" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Force or shrink fits constitute a special type of interference fit, normally characterized by maintenance of constant bore pressures throughout the range of sizes. As shown in the mathematical section of Chapter <a href="imperial-fits.html#imperial-fits">5</a>, the interference varies almost directly with diameter.</p>
+<ul>
+<li><strong>FN 1 Light drive fits</strong>: Require light assembly pressures and produce more or less permanent assemblies. Suitable for thin sections or long fits.</li>
+<li><strong>FN 2 Medium drive fits</strong>: Suitable for ordinary steel parts or for shrink fits on light sections. These are the tightest fits typically used with high-grade cast-iron external members.</li>
+<li><strong>FN 3 Heavy drive fits</strong>: Suitable for heavier steel parts or for shrink fits in medium sections.</li>
+<li><strong>FN 4 and FN 5 Force fits</strong>: Suitable for parts that can be highly stressed or for shrink fits where the heavy pressing forces required are impractical.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-12"></span>
+<img src="images/ANSI_ASME_B41_FN1_5.png" alt="[FN1 to FN5 small diameters](images/ANSI_ASME_B41_FN1_5.png)" width="75%" />
+<p class="caption">
+Figure 5.7: <a href="images/ANSI_ASME_B41_FN1_5.png">FN1 to FN5 small diameters</a>
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
+<img src="images/ANSI_ASME_B41_FN1_5_big.png" alt="[FN1 to FN5 big diameters](images/ANSI_ASME_B41_FN1_5_big.png)" width="75%" />
+<p class="caption">
+Figure 5.8: <a href="images/ANSI_ASME_B41_FN1_5_big.png">FN1 to FN5 big diameters</a>
+</p>
+</div>
+<blockquote>
+<p><strong>Note:</strong> For other numerical limits of clearance or interference for these classes, refer to the standard ANSI B4.1 tables.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-jensen2015interpreting" class="csl-entry">
+Branoff, Ted, Cecil H. Jensen, and Jay D. Helsel. 2015. <em>Interpreting Engineering Drawings</em>. 8th ed. Boston, MA: Delmar Cengage Learning.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="gdandt.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sharing-your-book.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/Prof-MV/DraftingAndTolerancing/blob/master/05-Imperial-Fits.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
