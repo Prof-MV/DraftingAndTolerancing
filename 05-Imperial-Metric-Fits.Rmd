@@ -97,6 +97,10 @@ knitr::include_graphics("images/ANSI_ASME_B41_FN1_5_big.png")
 
 > **Note:** For other numerical limits of clearance or interference for these classes, refer to the standard ANSI B4.1 tables.
 
+---
+
+---
+
 ## Metric Fits and the ISO Letter System {#metric-fits}
 
 In precision engineering, the relationship between two mating parts—typically a hole and a shaft—is defined by a "fit." The ISO system uses a specific alphanumeric code to define the tolerances of these parts, ensuring that components manufactured in different locations will assemble correctly according to [@ansi_b41].
@@ -120,9 +124,15 @@ The type of fit is determined by where the mating part's letter falls in the alp
 
 > **Note:** Either the shaft or the hole must have an **H/h**. Both can have it.
 
----
+The **number** following the letter (e.g., the '7' in $H7$) represents the **International Tolerance Grade (IT)**. This represents the magnitude of the tolerance zone. Mathematically, as the IT grade increases, the manufacturing window widens, meaning a looser requirement for precision.
 
-### Metric Hole Basis Fits
+Please see a description of the preferred metric fits below. Select from those if possible. 
+
+```{r, echo=FALSE, out.width="75%", fig.align="center", fig.cap="[Preferred Sizes (metric)](images/DescriptionPreferredMetric.png)"}
+knitr::include_graphics("images/DescriptionPreferredMetric.png")
+```
+
+### Metric Hole Basis Fits {#metric-fits-hole}
 
 In hole basis fits the hole always has the **H**. Preferred combinations of hole and shaft sizes can be found in this chart below.
 
@@ -155,7 +165,7 @@ knitr::include_graphics("images/ANSI_ASME_B41_metric_transition1.png")
 knitr::include_graphics("images/ANSI_ASME_B41_metric_transition2.png")
 ```
 
-### Metric Shaft Basis Fits
+### Metric Shaft Basis Fits {#metric-fits-shaft}
 
 In shaft basis fits the shaft always has the **h**. Preferred combinations of hole and shaft sizes can be found in this chart below.
 
@@ -188,51 +198,3 @@ knitr::include_graphics("images/ANSI_ASME_B41_metric_transition1S.png")
 knitr::include_graphics("images/ANSI_ASME_B41_metric_transition2S.png")
 ```
 
-
-
-The mathematical relationship for the maximum clearance ($C_{max}$) and maximum interference ($I_{max}$) can be expressed as:
-
-$$C_{max} = Hole_{max} - Shaft_{min}$$
-$$I_{max} = Shaft_{max} - Hole_{min}$$
-
----
-
-### Visualizing Tolerance Zones 
-
-To better understand how different shaft letters (e.g., g, k, p) interact with a standard $H7$ hole, we can visualize the deviation ranges using `ggplot2`. 
-
-```{r fit-visualization, echo=FALSE, message=FALSE, fig.cap="Comparison of Shaft Tolerance Zones relative to an H7 Hole (10-18mm range)"}
-library(ggplot2)
-
-# Data representing deviations in micrometers (um) for a 10-18mm nominal size
-# Values based on standard ISO 286 tables
-fit_data <- data.frame(
-  feature = factor(c("H7 (Hole)", "g6 (Clearance)", "k6 (Transition)", "p6 (Interference)"),
-                   levels = c("H7 (Hole)", "g6 (Clearance)", "k6 (Transition)", "p6 (Interference)")),
-  min_dev = c(0, -17, 1, 18),
-  max_dev = c(18, -6, 12, 29),
-  type = c("Hole", "Shaft", "Shaft", "Shaft")
-)
-
-ggplot(fit_data, aes(x = feature, ymin = min_dev, ymax = max_dev, color = type)) +
-  geom_linerange(linewidth = 8) +
-  geom_hline(yintercept = 0, linetype = "dashed", color = "black") +
-  labs(title = "ISO Fit Tolerance Zones",
-       subtitle = "Deviations for Nominal Size 10-18mm",
-       y = "Deviation from Nominal (μm)",
-       x = "Fit Designation") +
-  theme_minimal() +
-  scale_color_manual(values = c("Hole" = "#2c3e50", "Shaft" = "#e74c3c"))
-```
-
-### Identifying Fit Types
-
-As shown in Figure \@ref(fig:fit-visualization), the position of the shaft zone relative to the zero line (the nominal size) and the hole zone determines the fit category. To identify these in practice, observe the relationship between the two tolerance bands:
-
-* **Clearance Fit:** Identified when the shaft tolerance range is entirely below the hole range. For example, a $g6$ shaft paired with an $H7$ hole ensures there is always space for lubricant or movement.
-* **Interference Fit:** Identified when the shaft tolerance range is entirely above the hole range. A $p6$ shaft is physically larger than the $H7$ hole, requiring press-fitting or thermal expansion for assembly.
-* **Transition Fit:** Identified when the two ranges overlap. Using a $k6$ shaft means that, depending on the manufacturing deviation within the allowed limits, you may end up with either a slight clearance or a slight interference.
-
-
-
-> **Technical Note:** The number following the letter (e.g., the '7' in $H7$) represents the **International Tolerance Grade (IT)**. This represents the magnitude of the tolerance zone. Mathematically, as the IT grade increases, the manufacturing window widens, meaning a looser requirement for precision.

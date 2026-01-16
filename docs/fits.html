@@ -213,10 +213,8 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="fits.html"><a href="fits.html#the-letter-system-holes-vs.-shafts"><i class="fa fa-check"></i><b>5.3.1</b> The Letter System: Holes vs. Shafts</a></li>
 <li class="chapter" data-level="5.3.2" data-path="fits.html"><a href="fits.html#alphabetical-progression-and-the-h-pivot"><i class="fa fa-check"></i><b>5.3.2</b> Alphabetical Progression and the “H” Pivot</a></li>
-<li class="chapter" data-level="5.3.3" data-path="fits.html"><a href="fits.html#metric-hole-basis-fits"><i class="fa fa-check"></i><b>5.3.3</b> Metric Hole Basis Fits</a></li>
-<li class="chapter" data-level="5.3.4" data-path="fits.html"><a href="fits.html#metric-shaft-basis-fits"><i class="fa fa-check"></i><b>5.3.4</b> Metric Shaft Basis Fits</a></li>
-<li class="chapter" data-level="5.3.5" data-path="fits.html"><a href="fits.html#visualizing-tolerance-zones"><i class="fa fa-check"></i><b>5.3.5</b> Visualizing Tolerance Zones</a></li>
-<li class="chapter" data-level="5.3.6" data-path="fits.html"><a href="fits.html#identifying-fit-types"><i class="fa fa-check"></i><b>5.3.6</b> Identifying Fit Types</a></li>
+<li class="chapter" data-level="5.3.3" data-path="fits.html"><a href="fits.html#metric-fits-hole"><i class="fa fa-check"></i><b>5.3.3</b> Metric Hole Basis Fits</a></li>
+<li class="chapter" data-level="5.3.4" data-path="fits.html"><a href="fits.html#metric-fits-shaft"><i class="fa fa-check"></i><b>5.3.4</b> Metric Shaft Basis Fits</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>6</b> Sharing your book</a>
@@ -364,6 +362,8 @@ Figure 5.8: <a href="images/ANSI_ASME_B41_FN1_5_big.png">FN1 to FN5 big diameter
 <blockquote>
 <p><strong>Note:</strong> For other numerical limits of clearance or interference for these classes, refer to the standard ANSI B4.1 tables.</p>
 </blockquote>
+<hr />
+<hr />
 </div>
 </div>
 </div>
@@ -390,120 +390,101 @@ Figure 5.8: <a href="images/ANSI_ASME_B41_FN1_5_big.png">FN1 to FN5 big diameter
 <blockquote>
 <p><strong>Note:</strong> Either the shaft or the hole must have an <strong>H/h</strong>. Both can have it.</p>
 </blockquote>
-<hr />
-</div>
-<div id="metric-hole-basis-fits" class="section level3 hasAnchor" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> Metric Hole Basis Fits<a href="fits.html#metric-hole-basis-fits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In hole basis fits the hole always has the <strong>H</strong>. Preferred combinations of hole and shaft sizes can be found in this chart below.</p>
+<p>The <strong>number</strong> following the letter (e.g., the ‘7’ in <span class="math inline">\(H7\)</span>) represents the <strong>International Tolerance Grade (IT)</strong>. This represents the magnitude of the tolerance zone. Mathematically, as the IT grade increases, the manufacturing window widens, meaning a looser requirement for precision.</p>
+<p>Please see a description of the preferred metric fits below. Select from those if possible.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
+<img src="images/DescriptionPreferredMetric.png" alt="[Preferred Sizes (metric)](images/DescriptionPreferredMetric.png)" width="75%" />
+<p class="caption">
+Figure 5.9: <a href="images/DescriptionPreferredMetric.png">Preferred Sizes (metric)</a>
+</p>
+</div>
+</div>
+<div id="metric-fits-hole" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Metric Hole Basis Fits<a href="fits.html#metric-fits-hole" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In hole basis fits the hole always has the <strong>H</strong>. Preferred combinations of hole and shaft sizes can be found in this chart below.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
 <img src="images/PreferredHoleBasis_metric.png" alt="[Preferred Hole Basis Sizes (metric)](images/PreferredHoleBasis_metric.png)" width="75%" />
 <p class="caption">
-Figure 5.9: <a href="images/PreferredHoleBasis_metric.png">Preferred Hole Basis Sizes (metric)</a>
+Figure 5.10: <a href="images/PreferredHoleBasis_metric.png">Preferred Hole Basis Sizes (metric)</a>
 </p>
 </div>
 <p>Depending on the combination of the hole and shaft tolerance zones, fits are categorized into two primary types:</p>
 <div id="metric-clearance-fit" class="section level4 hasAnchor" number="5.3.3.1">
 <h4><span class="header-section-number">5.3.3.1</span> <strong>Metric Clearance Fit:</strong><a href="fits.html#metric-clearance-fit" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The shaft is always smaller than the hole. This allows for rotation or sliding.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
 <img src="images/ANSI_ASME_B41_metric_clearance1.png" alt="[Metric Clearance Fits Hole Basis Part 1](images/ANSI_ASME_B41_metric_clearance1.png)" width="75%" />
 <p class="caption">
-Figure 5.10: <a href="images/ANSI_ASME_B41_metric_clearance1.png">Metric Clearance Fits Hole Basis Part 1</a>
+Figure 5.11: <a href="images/ANSI_ASME_B41_metric_clearance1.png">Metric Clearance Fits Hole Basis Part 1</a>
 </p>
 </div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
 <img src="images/ANSI_ASME_B41_metric_clearance2.png" alt="[Metric Clearance Fits Hole Basis Part 2](images/ANSI_ASME_B41_metric_clearance2.png)" width="75%" />
 <p class="caption">
-Figure 5.11: <a href="images/ANSI_ASME_B41_metric_clearance2.png">Metric Clearance Fits Hole Basis Part 2</a>
+Figure 5.12: <a href="images/ANSI_ASME_B41_metric_clearance2.png">Metric Clearance Fits Hole Basis Part 2</a>
 </p>
 </div>
 </div>
 <div id="metric-interference-fit" class="section level4 hasAnchor" number="5.3.3.2">
 <h4><span class="header-section-number">5.3.3.2</span> <strong>Metric Interference Fit:</strong><a href="fits.html#metric-interference-fit" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The shaft is always larger than the hole. Assembly usually requires force, heat expansion, or cryo-shrinking.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
 <img src="images/ANSI_ASME_B41_metric_transition1.png" alt="[Metric Interference Fits Hole Basis Part 1](images/ANSI_ASME_B41_metric_transition1.png)" width="75%" />
 <p class="caption">
-Figure 5.12: <a href="images/ANSI_ASME_B41_metric_transition1.png">Metric Interference Fits Hole Basis Part 1</a>
+Figure 5.13: <a href="images/ANSI_ASME_B41_metric_transition1.png">Metric Interference Fits Hole Basis Part 1</a>
 </p>
 </div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
 <img src="images/ANSI_ASME_B41_metric_transition2.png" alt="[Metric Interference Fits Hole Basis Part 2](images/ANSI_ASME_B41_metric_transition2.png)" width="75%" />
 <p class="caption">
-Figure 5.13: <a href="images/ANSI_ASME_B41_metric_transition2.png">Metric Interference Fits Hole Basis Part 2</a>
+Figure 5.14: <a href="images/ANSI_ASME_B41_metric_transition2.png">Metric Interference Fits Hole Basis Part 2</a>
 </p>
 </div>
 </div>
 </div>
-<div id="metric-shaft-basis-fits" class="section level3 hasAnchor" number="5.3.4">
-<h3><span class="header-section-number">5.3.4</span> Metric Shaft Basis Fits<a href="fits.html#metric-shaft-basis-fits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="metric-fits-shaft" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Metric Shaft Basis Fits<a href="fits.html#metric-fits-shaft" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In shaft basis fits the shaft always has the <strong>h</strong>. Preferred combinations of hole and shaft sizes can be found in this chart below.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-20"></span>
 <img src="images/PreferredShaftBasis_metric.png" alt="[Preferred Shaft Basis Sizes (metric)](images/PreferredShaftBasis_metric.png)" width="75%" />
 <p class="caption">
-Figure 5.14: <a href="images/PreferredShaftBasis_metric.png">Preferred Shaft Basis Sizes (metric)</a>
+Figure 5.15: <a href="images/PreferredShaftBasis_metric.png">Preferred Shaft Basis Sizes (metric)</a>
 </p>
 </div>
 <p>Depending on the combination of the hole and shaft tolerance zones, fits are categorized into two primary types:</p>
 <div id="metric-clearance-fit-1" class="section level4 hasAnchor" number="5.3.4.1">
 <h4><span class="header-section-number">5.3.4.1</span> <strong>Metric Clearance Fit:</strong><a href="fits.html#metric-clearance-fit-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The shaft is always smaller than the hole. This allows for rotation or sliding.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-20"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-21"></span>
 <img src="images/ANSI_ASME_B41_metric_clearance1S.png" alt="[Metric Clearance Fits Shaft Basis Part 1](images/ANSI_ASME_B41_metric_clearance1S.png)" width="75%" />
 <p class="caption">
-Figure 5.15: <a href="images/ANSI_ASME_B41_metric_clearance1S.png">Metric Clearance Fits Shaft Basis Part 1</a>
+Figure 5.16: <a href="images/ANSI_ASME_B41_metric_clearance1S.png">Metric Clearance Fits Shaft Basis Part 1</a>
 </p>
 </div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-21"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
 <img src="images/ANSI_ASME_B41_metric_clearance2S.png" alt="[Metric Clearance Fits Shaft Basis Part 2](images/ANSI_ASME_B41_metric_clearance2S.png)" width="75%" />
 <p class="caption">
-Figure 5.16: <a href="images/ANSI_ASME_B41_metric_clearance2S.png">Metric Clearance Fits Shaft Basis Part 2</a>
+Figure 5.17: <a href="images/ANSI_ASME_B41_metric_clearance2S.png">Metric Clearance Fits Shaft Basis Part 2</a>
 </p>
 </div>
 </div>
 <div id="metric-interference-fit-1" class="section level4 hasAnchor" number="5.3.4.2">
 <h4><span class="header-section-number">5.3.4.2</span> <strong>Metric Interference Fit:</strong><a href="fits.html#metric-interference-fit-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The shaft is always larger than the hole. Assembly usually requires force, heat expansion, or cryo-shrinking.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-23"></span>
 <img src="images/ANSI_ASME_B41_metric_transition1S.png" alt="[Metric Interference Fits Shaft Basis Part 1](images/ANSI_ASME_B41_metric_transition1S.png)" width="75%" />
 <p class="caption">
-Figure 5.17: <a href="images/ANSI_ASME_B41_metric_transition1S.png">Metric Interference Fits Shaft Basis Part 1</a>
+Figure 5.18: <a href="images/ANSI_ASME_B41_metric_transition1S.png">Metric Interference Fits Shaft Basis Part 1</a>
 </p>
 </div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-23"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-24"></span>
 <img src="images/ANSI_ASME_B41_metric_transition2S.png" alt="[Metric Interference Fits Shaft Basis Part 2](images/ANSI_ASME_B41_metric_transition2S.png)" width="75%" />
 <p class="caption">
-Figure 5.18: <a href="images/ANSI_ASME_B41_metric_transition2S.png">Metric Interference Fits Shaft Basis Part 2</a>
+Figure 5.19: <a href="images/ANSI_ASME_B41_metric_transition2S.png">Metric Interference Fits Shaft Basis Part 2</a>
 </p>
 </div>
-<p>The mathematical relationship for the maximum clearance (<span class="math inline">\(C_{max}\)</span>) and maximum interference (<span class="math inline">\(I_{max}\)</span>) can be expressed as:</p>
-<p><span class="math display">\[C_{max} = Hole_{max} - Shaft_{min}\]</span>
-<span class="math display">\[I_{max} = Shaft_{max} - Hole_{min}\]</span></p>
-<hr />
-</div>
-</div>
-<div id="visualizing-tolerance-zones" class="section level3 hasAnchor" number="5.3.5">
-<h3><span class="header-section-number">5.3.5</span> Visualizing Tolerance Zones<a href="fits.html#visualizing-tolerance-zones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To better understand how different shaft letters (e.g., g, k, p) interact with a standard <span class="math inline">\(H7\)</span> hole, we can visualize the deviation ranges using <code>ggplot2</code>.</p>
-<div class="figure"><span style="display:block;" id="fig:fit-visualization"></span>
-<img src="_main_files/figure-html/fit-visualization-1.png" alt="Comparison of Shaft Tolerance Zones relative to an H7 Hole (10-18mm range)" width="672" />
-<p class="caption">
-Figure 5.19: Comparison of Shaft Tolerance Zones relative to an H7 Hole (10-18mm range)
-</p>
-</div>
-</div>
-<div id="identifying-fit-types" class="section level3 hasAnchor" number="5.3.6">
-<h3><span class="header-section-number">5.3.6</span> Identifying Fit Types<a href="fits.html#identifying-fit-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>As shown in Figure <a href="fits.html#fig:fit-visualization">5.19</a>, the position of the shaft zone relative to the zero line (the nominal size) and the hole zone determines the fit category. To identify these in practice, observe the relationship between the two tolerance bands:</p>
-<ul>
-<li><strong>Clearance Fit:</strong> Identified when the shaft tolerance range is entirely below the hole range. For example, a <span class="math inline">\(g6\)</span> shaft paired with an <span class="math inline">\(H7\)</span> hole ensures there is always space for lubricant or movement.</li>
-<li><strong>Interference Fit:</strong> Identified when the shaft tolerance range is entirely above the hole range. A <span class="math inline">\(p6\)</span> shaft is physically larger than the <span class="math inline">\(H7\)</span> hole, requiring press-fitting or thermal expansion for assembly.</li>
-<li><strong>Transition Fit:</strong> Identified when the two ranges overlap. Using a <span class="math inline">\(k6\)</span> shaft means that, depending on the manufacturing deviation within the allowed limits, you may end up with either a slight clearance or a slight interference.</li>
-</ul>
-<blockquote>
-<p><strong>Technical Note:</strong> The number following the letter (e.g., the ‘7’ in <span class="math inline">\(H7\)</span>) represents the <strong>International Tolerance Grade (IT)</strong>. This represents the magnitude of the tolerance zone. Mathematically, as the IT grade increases, the manufacturing window widens, meaning a looser requirement for precision.</p>
-</blockquote>
 
+</div>
 </div>
 </div>
 </div>

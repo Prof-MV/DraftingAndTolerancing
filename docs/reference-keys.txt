@@ -21,7 +21,7 @@ fig:unnamed-chunk-20
 fig:unnamed-chunk-21
 fig:unnamed-chunk-22
 fig:unnamed-chunk-23
-fig:fit-visualization
+fig:unnamed-chunk-24
 interpreting
 introduction-to-engineering-working-drawings-hijazi
 engineering-working-drawings-basics
@@ -55,14 +55,12 @@ force-fits
 metric-fits
 the-letter-system-holes-vs.-shafts
 alphabetical-progression-and-the-h-pivot
-metric-hole-basis-fits
+metric-fits-hole
 metric-clearance-fit
 metric-interference-fit
-metric-shaft-basis-fits
+metric-fits-shaft
 metric-clearance-fit-1
 metric-interference-fit-1
-visualizing-tolerance-zones
-identifying-fit-types
 sharing-your-book
 publishing
 pages
