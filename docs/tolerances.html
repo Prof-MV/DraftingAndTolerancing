@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Dimensioning | A Minimal Book Example</title>
+  <title>Chapter 4 Tolerances in Mechanical Design | A Minimal Book Example</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Dimensioning | A Minimal Book Example" />
+  <meta property="og:title" content="Chapter 4 Tolerances in Mechanical Design | A Minimal Book Example" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="Prof-MV/DraftingAndTolerancing" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Dimensioning | A Minimal Book Example" />
+  <meta name="twitter:title" content="Chapter 4 Tolerances in Mechanical Design | A Minimal Book Example" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="drafting.html"/>
-<link rel="next" href="tolerances.html"/>
+<link rel="prev" href="dimensioning.html"/>
+<link rel="next" href="blocks.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -243,93 +243,192 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="dimensioning" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Dimensioning<a href="dimensioning.html#dimensioning" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Cross-references make it easier for your readers to find and link to elements in your book.</p>
-<div id="chapters-and-sub-chapters" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Chapters and sub-chapters<a href="dimensioning.html#chapters-and-sub-chapters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are two steps to cross-reference any heading:</p>
+<div id="tolerances" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Tolerances in Mechanical Design<a href="drafting.html#tolerances" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In mechanical engineering and manufacturing, no part can be produced to exact absolute dimensions every single time due to inherent variations in machinery, material properties, and environmental conditions. Therefore, designers must specify an acceptable range of variation. This chapter explores the fundamental concepts of tolerances, basic sizes, and allowances, as defined in standards such as ASME Y14.5 <span class="citation">(<a href="#ref-ASME_Y14_5"><strong>ASME_Y14_5?</strong></a>)</span>.</p>
+<div id="fundamental-concepts" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Fundamental Concepts<a href="tolerances.html#fundamental-concepts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To understand tolerancing, we must first define three key terms:</p>
 <ol style="list-style-type: decimal">
-<li>Label the heading: <code># Hello world {#nice-label}</code>.
-<ul>
-<li>Leave the label off if you like the automated heading generated based on your heading title: for example, <code># Hello world</code> = <code># Hello world {#hello-world}</code>.</li>
-<li>To label an un-numbered heading, use: <code># Hello world {-#nice-label}</code> or <code>{# Hello world .unnumbered}</code>.</li>
-</ul></li>
-<li>Next, reference the labeled heading anywhere in the text using <code>\@ref(nice-label)</code>; for example, please see Chapter <a href="#cross"><strong>??</strong></a>.
-<ul>
-<li>If you prefer text as the link instead of a numbered reference use: <a href="#cross">any text you want can go here</a>.</li>
-</ul></li>
+<li><strong>Basic Size</strong>: The theoretical exact size from which limits of size are derived by the application of allowances and tolerances.</li>
+<li><strong>Tolerance</strong>: The total amount a specific dimension is permitted to vary. It is the difference between the maximum and minimum limits.</li>
+<li><strong>Allowance</strong>: An intentional difference between the maximum material limits of mating parts (e.g., the tightest fit between a shaft and a hole).</li>
 </ol>
+<p>Mathematically, if we denote the Upper Limit as <span class="math inline">\(L_{max}\)</span> and the Lower Limit as <span class="math inline">\(L_{min}\)</span>, the tolerance <span class="math inline">\(T\)</span> is calculated as:</p>
+<p><span class="math display">\[
+T = L_{max} - L_{min}
+\]</span></p>
+<p>These concepts apply universally, whether designing a cylindrical shaft diameter, a slot width, or the overall length of a prismatic part.</p>
 </div>
-<div id="captioned-figures-and-tables" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Captioned figures and tables<a href="dimensioning.html#captioned-figures-and-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Figures and tables <em>with captions</em> can also be cross-referenced from elsewhere in your book using <code>\@ref(fig:chunk-label)</code> and <code>\@ref(tab:chunk-label)</code>, respectively.</p>
-<p>See Figure <a href="dimensioning.html#fig:nice-fig">3.1</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="dimensioning.html#cb1-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
-<span id="cb1-2"><a href="dimensioning.html#cb1-2" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>, <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nice-fig"></span>
-<img src="_main_files/figure-html/nice-fig-1.png" alt="Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases." width="80%" />
+<div id="tolerancing-methods" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Tolerancing Methods<a href="tolerances.html#tolerancing-methods" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are two primary methods used to express tolerances on technical drawings: <strong>Limit Dimensions</strong> and <strong>Plus-Minus Tolerancing</strong>.</p>
+<div id="limit-dimensions" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Limit Dimensions<a href="tolerances.html#limit-dimensions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In limit dimensioning, the high and low limits are specified directly. The machinist does not need to calculate the limits; they are explicitly stated.</p>
+<ul>
+<li><strong>Example</strong>: <span class="math inline">\(\begin{matrix} 25.05 \\ 24.95 \end{matrix}\)</span></li>
+</ul>
+</div>
+<div id="plus-minus-tolerancing" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Plus-Minus Tolerancing<a href="tolerances.html#plus-minus-tolerancing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This method uses a basic size followed by a permissible variance. This category is further divided based on how the variance is distributed relative to the basic size.</p>
+<div id="equal-bilateral-tolerance" class="section level4 unnumbered hasAnchor">
+<h4>1. Equal Bilateral Tolerance<a href="tolerances.html#equal-bilateral-tolerance" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The variation is permitted equally in both directions (plus and minus) from the basic size.</p>
+<blockquote>
+<p><strong>Example</strong>: <span class="math inline">\(25.00 \pm 0.05\)</span></p>
+</blockquote>
+</div>
+<div id="unequal-bilateral-tolerance" class="section level4 unnumbered hasAnchor">
+<h4>2. Unequal Bilateral Tolerance<a href="tolerances.html#unequal-bilateral-tolerance" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The variation is permitted in both directions, but the amount differs.</p>
+<blockquote>
+<p><strong>Example</strong>: <span class="math inline">\(25.00 \,\, {}^{+0.05}_{-0.02}\)</span></p>
+</blockquote>
+</div>
+<div id="unilateral-tolerance" class="section level4 unnumbered hasAnchor">
+<h4>3. Unilateral Tolerance<a href="tolerances.html#unilateral-tolerance" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The variation is permitted in only one direction (either positive or negative) from the basic size. The limit in the other direction is zero.</p>
+<blockquote>
+<p><strong>Example</strong>: <span class="math inline">\(25.00 \,\, {}^{+0.05}_{-0.00}\)</span></p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="specifying-limits-in-tolerancing" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Specifying Limits in Tolerancing<a href="tolerances.html#specifying-limits-in-tolerancing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When defining the permissible variation of a part, designers choose between specifying a range (two limits) or a single boundary (one limit) based on the functional requirements of the feature.</p>
+<div id="tolerance-with-two-limits-limit-dimensioning" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Tolerance with Two Limits (Limit Dimensioning)<a href="tolerances.html#tolerance-with-two-limits-limit-dimensioning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In this method, the maximum and minimum dimensions are specified directly on the drawing. The tolerance is the absolute difference between these two values. This is the most direct method for a machinist to read, as it eliminates the need for mental math to find the boundaries.</p>
+<ul>
+<li><strong>Format</strong>: The limits are usually placed in a stack, with the high limit on top.</li>
+<li><strong>Calculation</strong>: <span class="math inline">\(Tolerance = Upper Limit - Lower Limit\)</span></li>
+<li><strong>Example</strong>: For a dimension specified as <span class="math inline">\(\begin{matrix} 1.505 \\ 1.495 \end{matrix}\)</span>
+<ul>
+<li>The <strong>Upper Limit</strong> is <span class="math inline">\(1.505\)</span></li>
+<li>The <strong>Lower Limit</strong> is <span class="math inline">\(1.495\)</span></li>
+<li>The <strong>Tolerance</strong> is <span class="math inline">\(0.010\)</span></li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="images/Allowances_TwoLimits.png" alt="Allowances with two limits" width="50%" />
 <p class="caption">
-Figure 3.1: Here is a nice figure!
+Figure 4.1: Allowances with two limits
 </p>
 </div>
-<p>Don’t miss Table <a href="dimensioning.html#tab:nice-tab">3.1</a>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="dimensioning.html#cb2-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb2-2"><a href="dimensioning.html#cb2-2" tabindex="-1"></a>  <span class="fu">head</span>(pressure, <span class="dv">10</span>), <span class="at">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</span>
-<span id="cb2-3"><a href="dimensioning.html#cb2-3" tabindex="-1"></a>  <span class="at">booktabs =</span> <span class="cn">TRUE</span></span>
-<span id="cb2-4"><a href="dimensioning.html#cb2-4" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="tolerance-with-one-limit-single-limit" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Tolerance with One Limit (Single Limit)<a href="tolerances.html#tolerance-with-one-limit-single-limit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Single-limit dimensioning is used when the dimension in one direction is not critical, or when the “other” limit is naturally constrained by the geometry or the manufacturing process. These are indicated by the suffixes <strong>MAX</strong> or <strong>MIN</strong>.</p>
+<ul>
+<li><strong>MAX (Maximum)</strong>: Specifies that the feature must not exceed the given value. The lower limit is often zero or determined by the part’s shape. This is commonly used for fillet radii or chamfers to prevent interference with a mating part.
+<ul>
+<li><em>Example</em>: <span class="math inline">\(R.015 \text{ MAX}\)</span></li>
+</ul></li>
+<li><strong>MIN (Minimum)</strong>: Specifies that the feature must be at least the given value. The upper limit is often determined by the material stock or is not functionally critical. This is commonly used for the depth of holes or the width of a bearing surface.
+<ul>
+<li><em>Example</em>: <span class="math inline">\(.500 \text{ MIN}\)</span> (Full Thread)</li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="images/Allowances_SingleLimit.png" alt="Allowances with a single limit" width="50%" />
+<p class="caption">
+Figure 4.2: Allowances with a single limit
+</p>
+</div>
+<hr />
+</div>
+<div id="comparison-summary" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Comparison Summary<a href="tolerances.html#comparison-summary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
-<caption><span id="tab:nice-tab">Table 3.1: </span>Here is a nice table!</caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="right">temperature</th>
-<th align="right">pressure</th>
+<th align="left">Method</th>
+<th align="left">Syntax</th>
+<th align="left">Primary Use Case</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">0</td>
-<td align="right">0.0002</td>
+<td align="left"><strong>Two Limits</strong></td>
+<td align="left"><span class="math inline">\(\begin{matrix} High \\ Low \end{matrix}\)</span></td>
+<td align="left">Critical fits (shafts, holes, mating surfaces).</td>
 </tr>
 <tr class="even">
-<td align="right">20</td>
-<td align="right">0.0012</td>
+<td align="left"><strong>One Limit (MAX)</strong></td>
+<td align="left"><span class="math inline">\(.010 \text{ MAX}\)</span></td>
+<td align="left">Clearance for corners, weight reduction, or edge breaks.</td>
 </tr>
 <tr class="odd">
-<td align="right">40</td>
-<td align="right">0.0060</td>
-</tr>
-<tr class="even">
-<td align="right">60</td>
-<td align="right">0.0300</td>
-</tr>
-<tr class="odd">
-<td align="right">80</td>
-<td align="right">0.0900</td>
-</tr>
-<tr class="even">
-<td align="right">100</td>
-<td align="right">0.2700</td>
-</tr>
-<tr class="odd">
-<td align="right">120</td>
-<td align="right">0.7500</td>
-</tr>
-<tr class="even">
-<td align="right">140</td>
-<td align="right">1.8500</td>
-</tr>
-<tr class="odd">
-<td align="right">160</td>
-<td align="right">4.2000</td>
-</tr>
-<tr class="even">
-<td align="right">180</td>
-<td align="right">8.8000</td>
+<td align="left"><strong>One Limit (MIN)</strong></td>
+<td align="left"><span class="math inline">\(.500 \text{ MIN}\)</span></td>
+<td align="left">Minimum engagement for fasteners or structural thickness.</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div id="visualizing-tolerance-distributions" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Visualizing Tolerance Distributions<a href="tolerances.html#visualizing-tolerance-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To better understand how manufactured parts align with these limits, we can visualize a production run. Figure <a href="tolerances.html#fig:tolerance-plot">4.3</a> below simulates a batch of 1000 shafts manufactured with a target diameter of 25.0 mm and a tolerance of <span class="math inline">\(\pm 0.05\)</span> mm.</p>
+<div class="figure"><span style="display:block;" id="fig:tolerance-plot"></span>
+<img src="_main_files/figure-html/tolerance-plot-1.png" alt="Distribution of manufactured shaft diameters relative to tolerance limits." width="672" />
+<p class="caption">
+Figure 4.3: Distribution of manufactured shaft diameters relative to tolerance limits.
+</p>
+</div>
+<p>As seen in Figure <a href="tolerances.html#fig:tolerance-plot">4.3</a>, the dashed red lines represent the Upper Specification Limit (USL) and Lower Specification Limit (LSL). Parts falling outside these lines would be rejected.</p>
+</div>
+</div>
+<div id="drawing-standards-metric-vs.-inch" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Drawing Standards: Metric vs. Inch<a href="tolerances.html#drawing-standards-metric-vs.-inch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One of the most critical aspects of technical documentation is adhering to the specific syntax rules for Metric (SI) and Inch (Imperial) units. These rules differ significantly regarding zero suppression and decimal consistency.</p>
+<div id="metric-rules-si" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Metric Rules (SI)<a href="tolerances.html#metric-rules-si" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When dimensioning in millimeters, the following rules apply:</p>
+<ul>
+<li><strong>Leading Zeros</strong>: For dimensions and tolerances less than 1 mm, a leading zero <strong>must</strong> be used.
+<ul>
+<li><em>Correct</em>: <span class="math inline">\(0.5\)</span></li>
+<li><em>Incorrect</em>: <span class="math inline">\(.5\)</span></li>
+</ul></li>
+<li><strong>Decimal Consistency</strong>: The number of decimal places <strong>can vary</strong> between the dimension and the tolerance.
+<ul>
+<li><em>Example</em>: <span class="math inline">\(25 \pm 0.25\)</span> (The basic size has 0 decimals; tolerance has 2).</li>
+</ul></li>
+<li><strong>Unilateral Zero</strong>: A zero in a unilateral tolerance is written as a single digit “0” without a plus or minus sign.
+<ul>
+<li><em>Example</em>: <span class="math inline">\(30 \,\, {}^{+0.1}_{0}\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="inch-rules-imperial" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Inch Rules (Imperial)<a href="tolerances.html#inch-rules-imperial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When dimensioning in inches, the conventions are distinct:</p>
+<ul>
+<li><strong>Leading Zeros</strong>: For dimensions and tolerances less than 1 inch, a leading zero is <strong>never</strong> used.
+<ul>
+<li><em>Correct</em>: <span class="math inline">\(.500\)</span></li>
+<li><em>Incorrect</em>: <span class="math inline">\(0.500\)</span></li>
+</ul></li>
+<li><strong>Decimal Consistency</strong>: The number of decimal places <strong>must be identical</strong> for the dimension and the tolerance.
+<ul>
+<li><em>Example</em>: <span class="math inline">\(1.000 \pm .005\)</span> (Both must show 3 decimal places).</li>
+</ul></li>
+<li><strong>Zeros in Tolerances</strong>:
+<ul>
+<li><strong>Bilateral</strong>: If a tolerance limit is zero, it still requires a plus or minus sign and must display the same number of decimal places as the dimension to express precision.</li>
+<li><em>Example</em>: <span class="math inline">\(1.000 \,\, {}^{+.005}_{-.000}\)</span></li>
+</ul></li>
+</ul>
 
+</div>
 </div>
 </div>
             </section>
@@ -337,8 +436,8 @@ Figure 3.1: Here is a nice figure!
           </div>
         </div>
       </div>
-<a href="drafting.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tolerances.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dimensioning.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="blocks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -369,7 +468,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/Prof-MV/DraftingAndTolerancing/blob/master/02-Dimensioning.Rmd",
+    "link": "https://github.com/Prof-MV/DraftingAndTolerancing/blob/master/03-Tolerances.Rmd",
     "text": "Edit"
   },
   "history": {

@@ -158,6 +158,22 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="strength-of-bolt-joint-calculations" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Strength of Bolt Joint Calculations<a href="strength-of-bolt-joint-calculations.html#strength-of-bolt-joint-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Mechanics of Bolted Joint Integrity {#bolted-joints} Bolted joints are among the most common elements in mechanical design, yet they are often the most frequent points of failure. Ensuring the strength of a bolted joint requires a delicate balance between the physical properties of the bolt, the stiffness of the clamped members, and the applied external loads. Fundamentals of Bolt PreloadWhen a bolt is tightened, it undergoes axial extension, creating a clamping force known as preload (<span class="math inline">\(F_p\)</span>). This preload is essential because it keeps the joint members in compression, preventing separation and reducing the amplitude of cyclic loading on the bolt itself.
+The relationship between the applied torque (<span class="math inline">\(T\)</span>) and the resulting preload is typically approximated by the “short-form” torque equation:<span class="math display">\[T = K \cdot D \cdot F_p\]</span>
+Where: <span class="math inline">\(T\)</span> is the tightening torque.<span class="math inline">\(K\)</span> is the torque coefficient (often ~0.2 for unlubricated steel).<span class="math inline">\(D\)</span> is the nominal diameter of the bolt. <span class="math inline">\(F_p\)</span> is the desired preload. Note: Relying solely on torque to determine preload is notoriously imprecise due to friction variables. Advanced applications may use the “turn-of-nut” method or ultrasonic tension sensors <span class="citation">(<a href="#ref-shigley2020">Budynas and Nisbett 2020</a>)</span>. Load Distribution and Joint Stiffness. When an external tensile load (<span class="math inline">\(P\)</span>) is applied to a joint, only a fraction of that load is actually felt by the bolt. The rest is absorbed by the decompression of the clamped members. This is defined by the joint stiffness constant, <span class="math inline">\(C\)</span>:<span class="math display">\[C = \frac{k_b}{k_b + k_m}\]</span> In this equation, <span class="math inline">\(k_b\)</span> represents the stiffness of the bolt and <span class="math inline">\(k_m\)</span> represents the stiffness of the members. The total force acting on the bolt (<span class="math inline">\(F_b\)</span>) after the external load is applied is:<span class="math display">\[F_b = F_p + C \cdot P\]</span> Visualizing Factor of Safety to ensure the joint does not fail via yielding or separation, we must calculate the factor of safety. The following R code demonstrates how the bolt force increases relative to the external load until the point of joint separation.</p>
+<div class="figure"><span style="display:block;" id="fig:bolt-plot"></span>
+<img src="_main_files/figure-html/bolt-plot-1.png" alt="Relationship between Bolt Force and External Load." width="672" />
+<p class="caption">
+Figure 5.1: Relationship between Bolt Force and External Load.
+</p>
+</div>
+<p>As illustrated in Figure~<a href="strength-of-bolt-joint-calculations.html#fig:bolt-plot">5.1</a>, the bolt force increases much more slowly while the joint is clamped (<span class="math inline">\(C &lt; 1\)</span>). Once the external load exceeds the separation point, the bolt must carry the entire load, significantly increasing the risk of fatigue or tensile failure.
+<strong>Summary Checklist for Designers</strong>
+* Determine required clamping force to prevent sliding or separation.
+* Select bolt grade based on proof strength requirements.
+* Calculate stiffnesses (<span class="math inline">\(k_b, k_m\)</span>) to find the joint constant.
+* Verify safety factors against yielding, joint separation, and fatigue.</p>
+<hr />
 <div id="example" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Example<a href="strength-of-bolt-joint-calculations.html#example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this example we are verifying if the bolts can hold the applied load and how big the safety factors are.</p>
@@ -187,7 +203,7 @@ div.csl-indent {
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="images/BoltJointExample.png" alt="2 Plate Example" width="100%" />
 <p class="caption">
-Figure 5.1: 2 Plate Example
+Figure 5.2: 2 Plate Example
 </p>
 </div>
 <div id="what-is-the-spring-constant-of-the-bolt-k_b" class="section level5 unnumbered hasAnchor question">
@@ -339,6 +355,9 @@ What is <span class="math inline">\(F_i\)</span> if the operator lubricates the 
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-shigley2020" class="csl-entry">
+Budynas, Richard G., and J. Keith Nisbett. 2020. <em>Shigley’s Mechanical Engineering Design</em>. 11th ed. McGraw-Hill Education.
+</div>
 <div id="ref-fastenal_guide" class="csl-entry">
 Fastenal Company. n.d. <em>Fastenal Fastener Technical Reference Guide</em>. Winona, MN: Fastenal Engineering; Design Support. <a href="http://www-eng.lbl.gov/~shuman/NEXT/MATERIALS&amp;COMPONENTS/Pressure_vessels/FastenalTechnicalReferenceGuide.pdf">http://www-eng.lbl.gov/~shuman/NEXT/MATERIALS&amp;COMPONENTS/Pressure_vessels/FastenalTechnicalReferenceGuide.pdf</a>.
 </div>
