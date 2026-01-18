@@ -1,0 +1,1479 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{book}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Drafting and Tolerancing},
+  pdfauthor={Martin Volkening},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Drafting and Tolerancing}
+\author{Martin Volkening}
+\date{2026-01-18}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter*{About}\label{about}
+\addcontentsline{toc}{chapter}{About}
+
+This book compiles information and guidelines about drafting, dimensioning and tolerancing of technical drawings.
+
+\chapter{Interpreting and Creating Drawings}\label{interpreting}
+
+\subsection{\texorpdfstring{Introduction to Engineering Working Drawings \citep{Hijazi}}{Introduction to Engineering Working Drawings {[}@Hijazi{]}}}\label{introduction-to-engineering-working-drawings-hijazi}
+
+\subsubsection{Engineering Working Drawings Basics}\label{engineering-working-drawings-basics}
+
+Engineering graphics is an effective way of communicating technical ideas and it is an essential tool in engineering design where most of the design process is graphically based. Engineering graphics is used in the design process for \textbf{visualization}, \textbf{communication}, and \textbf{documentation}.
+
+Graphics is a visual communications language that include images, text, and numeric information. Graphics communications using engineering drawings and models is a clear and precise language with definite rules that must be mastered in order to be successful in engineering design. Graphics communications are used in every phase of engineering design starting from concept illustration all the way to the manufacturing phase.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{An engineering (or technical) drawing} is a graphical representation of a part, assembly, system, or structure and it can be produced using freehand, mechanical tools, or computer methods.
+\item
+  \textbf{Working drawings} are the set of technical drawings used during the manufacturing phase of a product. They contain all the information needed to manufacture and assemble a product.
+\end{itemize}
+
+\subsubsection{Codes and Standards}\label{codes-and-standards}
+
+Codes and standards are made to organize and unify the engineering work.
+
+\emph{Imagine; what if there was no standard for bolts?}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{A code} is a set of specifications for the analysis, design, manufacture, and construction of something.
+\item
+  \textbf{A standard} is a set of specifications for parts, materials, or processes intended to achieve uniformity, efficiency and specific quality.
+\end{itemize}
+
+\paragraph*{Organizations}\label{organizations}
+\addcontentsline{toc}{paragraph}{Organizations}
+
+Examples of the organizations that establish standards and design codes include:
+\textbf{ISO, AISI, SAE, ASTM, ASME, ANSI, DIN.}
+
+There are many different standards related to technical drawings. The ISO standards for technical drawings are found in a two-volume handbook:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{ISO Standards Handbook: Technical drawings, Volume 1:} Technical drawings in general.
+\item
+  \textbf{ISO Standards Handbook: Technical drawings, Volume 2:} Mechanical engineering drawings; Construction drawings; Drawing equipment.
+\end{itemize}
+
+\subsubsection{Drawing Sheet Layout}\label{drawing-sheet-layout}
+
+Standard layouts of drawing sheets are specified by the various standards organizations.
+
+The figure below shows the layout of a typical sheet, showing the drawing frame, a typical title block, parts list (bill of materials), and revision table.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/7-2-1-1536x1192} 
+
+}
+
+\caption{Title Block of Technical Drawing}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\paragraph{\texorpdfstring{Title Block Components \citep{lorier2025blueprint}}{Title Block Components {[}@lorier2025blueprint{]}}}\label{title-block-components-lorier2025blueprint}
+
+\begin{itemize}
+\item
+  \textbf{Part Title}: The title is a descriptive name given to the drawing, typically the largest box in the title block.
+\item
+  \textbf{Company Information}: The name of the company responsible for the drawing will also appear in a larger box in the title block. Often, a logo for the company will be displayed as well.
+\item
+  \textbf{Size}: The size block displays the letter of the sheet size of the print (e.g., A, B, C, or A4, A3).
+\item
+  \textbf{Drawing Number}: A numbering system the company uses to aid in filing and tracking the drawing.
+\item
+  \textbf{Part Number}: A part number may be used to identify a specific part, such as in an assembly parts list.
+\item
+  \textbf{Scale}: The scale displays the proportion of the drawing compared to the object.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Reduction}: When the part is too large to fit on the sheet, the drawing may be reduced to \(1/2, 1/4, 1/8\), etc.
+  \item
+    \textbf{Enlargement}: When the part is smaller than the sheet, the drawing may be increased proportionally.
+  \item
+    \textbf{``DO'' Scale}: The ratio is arranged as \textbf{Drawing:Object}.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      A scale of \textbf{1:2} indicates the drawing is half the size of the part.
+    \item
+      A scale of \textbf{2:1} indicates the drawing is twice the size of the part.
+    \item
+      A scale of \textbf{1:1} or \textbf{``Full''} indicates they are the same size.
+    \end{itemize}
+  \item
+    \textbf{NTS}: Stands for ``Not To Scale,'' used if the drawing does not follow a basic proportional size.
+  \end{itemize}
+\item
+  \textbf{Drawn}: Contains the name or initials of the drafter and the date of the drawing, as well as any other individuals involved (checkers, engineers).
+\item
+  \textbf{Projection}: Identifies whether the drawing is a \textbf{first-angle} or \textbf{third-angle} projection. This is typically indicated with a standard projection cone symbol.
+\item
+  \textbf{Weight}: Used to indicate the weight of the finished part when required.
+\item
+  \textbf{Sheet}: Displays the current and total number of sheets in that drawing set (e.g., Sheet 1 of 3).
+\item
+  \textbf{Material}: Identifies the specific material requirements for the part.
+\item
+  \textbf{Finish}: Displays any part finish specifications. These may be indicated for specific regions using leader lines.
+\item
+  \textbf{Application}: Used to identify the assemblies on which the part is used.
+\end{itemize}
+
+\paragraph{Default Tolerances}\label{default-tolerances}
+
+\textbf{Default Tolerance Box}: Displays the amount of variation allowed on dimension values that do not have a specific tolerance attached to them. These are usually categorized by the number of decimal places.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/7-3-768x508} 
+
+}
+
+\caption{Default Tolerances}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+\begin{quote}
+\emph{Example based on Figure 7-3:}
+* A two-place dimension of \textbf{2.00} allows for a \(\pm 0.02\) tolerance (Range: \(1.98\) to \(2.02\)).
+* A three-place dimension of \textbf{2.000} allows for a \(\pm 0.010\) tolerance (Range: \(1.990\) to \(2.010\)).
+\end{quote}
+
+\paragraph{Document Control and Layout}\label{document-control-and-layout}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Revision}: Revisions are changes made to the drawing after the original release to correct errors, improve design, or reduce manufacturing costs.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The \textbf{revision level} (letter or number) is located in the lower right.
+  \item
+    The \textbf{revision history} is typically located in the upper right of the sheet.
+  \item
+    A \textbf{dash (-)} or the letter \textbf{``A''} often indicates the initial release.
+  \end{itemize}
+\item
+  \textbf{Zones}: Sheet zones (using letters and numbers along the border) help locate particular details or views, which is especially beneficial on large-format drawings.
+\end{itemize}
+
+\chapter{Dimensioning Rules}\label{dimensioningrules}
+
+\chapter{Tolerances in Mechanical Design}\label{tolerances}
+
+In mechanical engineering and manufacturing, no part can be produced to exact absolute dimensions every single time due to inherent variations in machinery, material properties, and environmental conditions. Therefore, designers must specify an acceptable range of variation. This chapter explores the fundamental concepts of tolerances, basic sizes, and allowances, as defined in standards such as ASME Y14.5 \citep{ASME_Y145_2018}.
+
+\section{Fundamental Concepts}\label{fundamental-concepts}
+
+To understand tolerancing, we must first define three key terms:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Basic Size}: The theoretical exact size from which limits of size are derived by the application of allowances and tolerances.
+\item
+  \textbf{Tolerance}: The total amount a specific dimension is permitted to vary. It is the difference between the maximum and minimum limits.
+\item
+  \textbf{Allowance}: An intentional difference between the maximum material limits of mating parts (e.g., the tightest fit between a shaft and a hole).
+\end{enumerate}
+
+Mathematically, if we denote the Upper Limit as \(L_{max}\) and the Lower Limit as \(L_{min}\), the tolerance \(T\) is calculated as:
+
+\[
+T = L_{max} - L_{min}
+\]
+
+These concepts apply universally, whether designing a cylindrical shaft diameter, a slot width, or the overall length of a prismatic part.
+
+\section{Tolerancing Methods}\label{tolerancing-methods}
+
+There are two primary methods used to express tolerances on technical drawings: \textbf{Limit Dimensions} and \textbf{Plus-Minus Tolerancing}.
+
+\subsection{Limit Dimensions}\label{limit-dimensions}
+
+In limit dimensioning, the high and low limits are specified directly. The machinist does not need to calculate the limits; they are explicitly stated.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Example}: \(\begin{matrix} 25.05 \\ 24.95 \end{matrix}\)
+\end{itemize}
+
+\subsection{Plus-Minus Tolerancing}\label{plus-minus-tolerancing}
+
+This method uses a basic size followed by a permissible variance. This category is further divided based on how the variance is distributed relative to the basic size.
+
+\subsubsection*{1. Equal Bilateral Tolerance}\label{equal-bilateral-tolerance}
+\addcontentsline{toc}{subsubsection}{1. Equal Bilateral Tolerance}
+
+The variation is permitted equally in both directions (plus and minus) from the basic size.
+
+\begin{quote}
+\textbf{Example}: \(25.00 \pm 0.05\)
+\end{quote}
+
+\subsubsection*{2. Unequal Bilateral Tolerance}\label{unequal-bilateral-tolerance}
+\addcontentsline{toc}{subsubsection}{2. Unequal Bilateral Tolerance}
+
+The variation is permitted in both directions, but the amount differs.
+
+\begin{quote}
+\textbf{Example}: \(25.00 \,\, {}^{+0.05}_{-0.02}\)
+\end{quote}
+
+\subsubsection*{3. Unilateral Tolerance}\label{unilateral-tolerance}
+\addcontentsline{toc}{subsubsection}{3. Unilateral Tolerance}
+
+The variation is permitted in only one direction (either positive or negative) from the basic size. The limit in the other direction is zero.
+
+\begin{quote}
+\textbf{Example}: \(25.00 \,\, {}^{+0.05}_{-0.00}\)
+\end{quote}
+
+\section{Specifying Limits in Tolerancing}\label{specifying-limits-in-tolerancing}
+
+When defining the permissible variation of a part, designers choose between specifying a range (two limits) or a single boundary (one limit) based on the functional requirements of the feature.
+
+\subsection{Tolerance with Two Limits (Limit Dimensioning)}\label{tolerance-with-two-limits-limit-dimensioning}
+
+In this method, the maximum and minimum dimensions are specified directly on the drawing. The tolerance is the absolute difference between these two values. This is the most direct method for a machinist to read, as it eliminates the need for mental math to find the boundaries.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Format}: The limits are usually placed in a stack, with the high limit on top.
+\item
+  \textbf{Calculation}: \(Tolerance = Upper Limit - Lower Limit\)
+\item
+  \textbf{Example}: For a dimension specified as \(\begin{matrix} 1.505 \\ 1.495 \end{matrix}\)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The \textbf{Upper Limit} is \(1.505\)
+  \item
+    The \textbf{Lower Limit} is \(1.495\)
+  \item
+    The \textbf{Tolerance} is \(0.010\)
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/Allowances_TwoLimits} 
+
+}
+
+\caption{Allowances with two limits}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+\subsection{Tolerance with One Limit (Single Limit)}\label{tolerance-with-one-limit-single-limit}
+
+Single-limit dimensioning is used when the dimension in one direction is not critical, or when the ``other'' limit is naturally constrained by the geometry or the manufacturing process. These are indicated by the suffixes \textbf{MAX} or \textbf{MIN}.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{MAX (Maximum)}: Specifies that the feature must not exceed the given value. The lower limit is often zero or determined by the part's shape. This is commonly used for fillet radii or chamfers to prevent interference with a mating part.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Example}: \(R.015 \text{ MAX}\)
+  \end{itemize}
+\item
+  \textbf{MIN (Minimum)}: Specifies that the feature must be at least the given value. The upper limit is often determined by the material stock or is not functionally critical. This is commonly used for the depth of holes or the width of a bearing surface.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Example}: \(.500 \text{ MIN}\) (Full Thread)
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/Allowances_SingleLimit} 
+
+}
+
+\caption{Allowances with a single limit}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Comparison Summary}\label{comparison-summary}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Method
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Syntax
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Primary Use Case
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Two Limits} & \(\begin{matrix} High \\ Low \end{matrix}\) & Critical fits (shafts, holes, mating surfaces). \\
+\textbf{One Limit (MAX)} & \(.010 \text{ MAX}\) & Clearance for corners, weight reduction, or edge breaks. \\
+\textbf{One Limit (MIN)} & \(.500 \text{ MIN}\) & Minimum engagement for fasteners or structural thickness. \\
+\end{longtable}
+
+\subsection{Visualizing Tolerance Distributions}\label{visualizing-tolerance-distributions}
+
+To better understand how manufactured parts align with these limits, we can visualize a production run. Figure \ref{fig:tolerance-plot} below simulates a batch of 1000 shafts manufactured with a target diameter of 25.0 mm and a tolerance of \(\pm 0.05\) mm.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/tolerance-plot-1.pdf}}
+\caption{\label{fig:tolerance-plot}Distribution of manufactured shaft diameters relative to tolerance limits.}
+\end{figure}
+
+As seen in Figure \ref{fig:tolerance-plot}, the dashed red lines represent the Upper Specification Limit (USL) and Lower Specification Limit (LSL). Parts falling outside these lines would be rejected.
+
+\section{Drawing Standards: Metric vs.~Inch}\label{drawing-standards-metric-vs.-inch}
+
+One of the most critical aspects of technical documentation is adhering to the specific syntax rules for Metric (SI) and Inch (Imperial) units. These rules differ significantly regarding zero suppression and decimal consistency.
+
+\subsection{Metric Rules (SI)}\label{metric-rules-si}
+
+When dimensioning in millimeters, the following rules apply:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Leading Zeros}: For dimensions and tolerances less than 1 mm, a leading zero \textbf{must} be used.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Correct}: \(0.5\)
+  \item
+    \emph{Incorrect}: \(.5\)
+  \end{itemize}
+\item
+  \textbf{Decimal Consistency}: The number of decimal places \textbf{can vary} between the dimension and the tolerance.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Example}: \(25 \pm 0.25\) (The basic size has 0 decimals; tolerance has 2).
+  \end{itemize}
+\item
+  \textbf{Unilateral Zero}: A zero in a unilateral tolerance is written as a single digit ``0'' without a plus or minus sign.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Example}: \(30 \,\, {}^{+0.1}_{0}\)
+  \end{itemize}
+\end{itemize}
+
+\subsection{Inch Rules (Imperial)}\label{inch-rules-imperial}
+
+When dimensioning in inches, the conventions are distinct:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Leading Zeros}: For dimensions and tolerances less than 1 inch, a leading zero is \textbf{never} used.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Correct}: \(.500\)
+  \item
+    \emph{Incorrect}: \(0.500\)
+  \end{itemize}
+\item
+  \textbf{Decimal Consistency}: The number of decimal places \textbf{must be identical} for the dimension and the tolerance.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Example}: \(1.000 \pm .005\) (Both must show 3 decimal places).
+  \end{itemize}
+\item
+  \textbf{Zeros in Tolerances}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Bilateral}: If a tolerance limit is zero, it still requires a plus or minus sign and must display the same number of decimal places as the dimension to express precision.
+  \item
+    \emph{Example}: \(1.000 \,\, {}^{+.005}_{-.000}\)
+  \end{itemize}
+\end{itemize}
+
+\chapter{Geometric Dimensioning and Tolerancing (GD\&T)}\label{geometric-dimensioning-and-tolerancing-gdt}
+
+\section*{Learning Objectives}\label{learning-objectives}
+\addcontentsline{toc}{section}{Learning Objectives}
+
+By the end of this chapter, you will be able to:
+
+\begin{itemize}
+\tightlist
+\item
+  Understand the fundamental principles of GD\&T per ASME Y14.5 standards
+\item
+  Differentiate between dimensional and geometric tolerances
+\item
+  Apply datums, tolerance zones, and modifier symbols correctly
+\item
+  Create and interpret feature control frames
+\item
+  Understand the hierarchy of geometric controls
+\item
+  Apply GD\&T to real-world engineering problems
+\item
+  Use interactive visualizations to verify tolerance stack-up
+\end{itemize}
+
+\section{1. Introduction to GD\&T}\label{introduction-to-gdt}
+
+Geometric Dimensioning and Tolerancing (GD\&T) is a standardized method of specifying and communicating engineering tolerances. Unlike traditional plus-minus dimensioning, GD\&T uses a symbolic language that provides a clear, concise description of part geometry and allowable variations.
+
+\subsection{Why GD\&T Matters}\label{why-gdt-matters}
+
+Traditional dimensioning (Figure \textbackslash{}\citet{ref}(fig:traditional-vs-gdt)) can lead to:
+- Ambiguous interpretations of design intent
+- Excessive part cost due to overly tight tolerances
+- Functional failures due to under-constrained features
+- Increased manufacturing costs and waste
+
+GD\&T solves these problems by:
+- Clearly communicating design intent
+- Maximizing functional tolerance zones
+- Reducing manufacturing costs
+- Improving part interchangeability
+
+\begin{verbatim}
+## 
+## Attaching package: 'gridExtra'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:dplyr':
+## 
+##     combine
+\end{verbatim}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/traditional-vs-gdt-1.pdf}}
+\caption{\label{fig:traditional-vs-gdt}Comparison: Traditional vs.~GD\&T Dimensioning}
+\end{figure}
+
+\section{2. Fundamental Principles}\label{fundamental-principles}
+
+\subsection{2.1 The Rule of Interchangeability}\label{the-rule-of-interchangeability}
+
+GD\&T is built on the principle that parts must be interchangeable while satisfying functional requirements. This means:
+
+\begin{itemize}
+\tightlist
+\item
+  All parts produced to specification must fit and function together
+\item
+  Tolerance zones maximize functional space
+\item
+  Manufacturing processes can operate at economical levels
+\end{itemize}
+
+\subsection{2.2 Key Definitions}\label{key-definitions}
+
+\textbf{Datum}: A theoretically exact geometric reference (plane, line, or point) from which other geometric characteristics are measured.
+
+\textbf{Tolerance Zone}: The allowable area or volume within which a feature must lie.
+
+\textbf{Feature of Size}: A cylindrical feature (hole, shaft) or a pair of parallel surfaces (slot width) to which a tolerance is applied.
+
+\textbf{Maximum Material Condition (MMC)}: The condition where a feature contains the maximum amount of material (smallest hole, largest shaft).
+
+\textbf{Least Material Condition (LMC)}: The condition where a feature contains the minimum amount of material (largest hole, smallest shaft).
+
+\section{3. The Feature Control Frame}\label{the-feature-control-frame}
+
+The Feature Control Frame (FCF) is the foundation of GD\&T notation. It's a rectangular box divided into compartments that specify the geometric characteristic and its requirements.
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/fcf-diagram-1.pdf}}
+
+\subsection{3.1 Component Breakdown}\label{component-breakdown}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2564}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2821}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2308}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2308}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Position
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Component
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Content
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Example
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Geometric Characteristic Symbol & Defines the type of control & ⊙ (Position), ⊥ (Perpendicular), ∥ (Parallel) \\
+2 & Tolerance Value & Diameter and numerical value & Ø 0.5 mm, 0.3 mm \\
+3 & Datum A & Primary datum reference & A \\
+4 & Datum B & Secondary datum reference & B \\
+5 & Datum C & Tertiary datum reference & C \\
+\end{longtable}
+
+\subsection{3.2 Modifier Symbols}\label{modifier-symbols}
+
+Modifiers are used after the tolerance value and datum references to specify material condition constraints:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{M (Maximum Material Condition)}: Tolerance increases as feature departs from MMC
+\item
+  \textbf{L (Least Material Condition)}: Tolerance increases as feature departs from LMC
+\item
+  \textbf{S (Regardless of Feature Size)}: Tolerance remains constant regardless of feature size
+  \textbackslash begin\{table\}
+\end{itemize}
+
+\caption{\label{tab:modifiers-table}Common GD&T Modifiers and Symbols}
+\centering
+\begin{tabular}[t]{lll}
+\toprule
+Symbol & Name & Application\\
+\midrule
+Ø & Diameter & Circular tolerance zone\\
+⊙ & Position & Indicates positional tolerance\\
+M & Max Material Condition & Tolerance varies with feature size\\
+L & Least Material Condition & Tolerance varies inversely with feature size\\
+S & Regardless of Size & Fixed tolerance, independent of size\\
+\bottomrule
+\end{tabular}
+
+\textbackslash end\{table\}
+
+\section{4. The 14 Geometric Characteristics}\label{the-14-geometric-characteristics}
+
+GD\&T defines 14 geometric characteristics organized into four categories:
+
+\subsection{4.1 Form Controls (No Datum Required)}\label{form-controls-no-datum-required}
+
+These controls constrain the shape of individual features.
+
+\begin{table}
+
+\caption{\label{tab:form-controls}Form Control Characteristics}
+\centering
+\begin{tabular}[t]{lll}
+\toprule
+Symbol & Name & Definition\\
+\midrule
+⌢ & Straightness & All points lie on straight line\\
+⌭ & Flatness & All points lie on same plane\\
+⌒ & Circularity & All points equidistant from center\\
+◯ & Cylindricity & All points equidistant from axis\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Interactive Example: Straightness}
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/straightness-demo-1.pdf}}
+
+\subsection{4.2 Orientation Controls (Datum Required)}\label{orientation-controls-datum-required}
+
+These controls define how features are oriented relative to a datum.
+
+\begin{table}
+
+\caption{\label{tab:orientation-controls}Orientation Control Characteristics}
+\centering
+\begin{tabular}[t]{llll}
+\toprule
+Symbol & Name & Definition & Use\_Case\\
+\midrule
+⊥ & Perpendicularity & Feature is perpendicular to datum & Holes perpendicular to mounting surface\\
+∥ & Parallelism & Feature is parallel to datum & Surfaces parallel for assembly\\
+∠ & Angularity & Feature at specific angle to datum & Angled surfaces at specific degrees\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{4.3 Location Controls (Datum Required)}\label{location-controls-datum-required}
+
+These controls define where features are positioned.
+
+\begin{table}
+
+\caption{\label{tab:location-controls}Location Control Characteristics}
+\centering
+\begin{tabular}[t]{llll}
+\toprule
+Symbol & Name & Definition & Example\\
+\midrule
+⊙ & Position & Feature location relative to datums & Bolt hole pattern\\
+⊕ & Concentricity & Feature axis coincident with datum axis & Concentric bores\\
+◉ & Symmetry & Feature symmetrical about datum plane & Symmetrical slot\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Interactive Example: Positional Tolerance}
+
+\begin{verbatim}
+## Warning in annotate("text", x = 51.5, y = 50.5, label = "Datum Intersection", :
+## Ignoring unknown parameters: `fontsize`
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in annotate("text", x = 50, y = 49.3, label = "Ø0.7 mm\\nTolerance
+## Zone", : Ignoring unknown parameters: `fontsize`
+\end{verbatim}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/position-demo-1.pdf}}
+\caption{\label{fig:position-demo}Positional Tolerance Visualization}
+\end{figure}
+
+\subsection{4.4 Runout Controls (Datum Required)}\label{runout-controls-datum-required}
+
+These controls define circular or total runout of features about a datum axis.
+
+\begin{table}
+
+\caption{\label{tab:runout-controls}Runout Control Characteristics}
+\centering
+\begin{tabular}[t]{llll}
+\toprule
+Symbol & Name & Definition & Application\\
+\midrule
+⌬ & Circular Runout & Runout at each circular element about datum axis & Rotating bearing surfaces\\
+⌭ & Total Runout & Total runout across all circular elements & Shaft wobble tolerance\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{5. Datum Systems}\label{datum-systems}
+
+Datums are the foundation of GD\&T. They establish the reference framework from which all tolerances are applied.
+
+\subsection{5.1 Datum Selection Hierarchy}\label{datum-selection-hierarchy}
+
+The datum system typically follows a three-plane reference:
+
+\begin{verbatim}
+## Warning in annotate("text", x = 5, y = 3.5, label = "PRIMARY DATUM
+## (A)\\nLargest, most stable surface", : Ignoring unknown parameters: `fontsize`
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in annotate("text", x = 9, y = 3.5, label = "SECONDARY\\nDATUM (B)", :
+## Ignoring unknown parameters: `fontsize`
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in annotate("text", x = 5, y = 6.75, label = "TERTIARY DATUM (C)", :
+## Ignoring unknown parameters: `fontsize`
+\end{verbatim}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/datum-system-1.pdf}}
+\caption{\label{fig:datum-system}Three-Plane Datum System}
+\end{figure}
+
+\subsection{5.2 Datum Reference Frame}\label{datum-reference-frame}
+
+The Datum Reference Frame (DRF) is a coordinate system established by the datums:
+
+\begin{table}
+
+\caption{\label{tab:datum-ref-frame}Datum Reference Frame Structure}
+\centering
+\begin{tabular}[t]{lllll}
+\toprule
+Position & Abbreviation & Constraint & Feature & Purpose\\
+\midrule
+Primary & A & 3 DOF restricted & Largest plane/surface & Establish origin\\
+Secondary & B & 2 DOF restricted & Perpendicular surface & Establish X-axis\\
+Tertiary & C & 1 DOF restricted & Edge or smallest feature & Establish Y-axis\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{6. Material Conditions and Bonus Tolerances}\label{material-conditions-and-bonus-tolerances}
+
+\subsection{6.1 Maximum Material Condition (MMC)}\label{maximum-material-condition-mmc}
+
+MMC is the condition where a feature contains the maximum amount of material:
+- Smallest hole diameter
+- Largest shaft diameter
+- Widest slot
+
+\begin{verbatim}
+## Warning in geom_text(aes(label = diameter), vjust = -0.5, fontsize = 5, :
+## Ignoring unknown parameters: `fontsize`
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 3 rows containing missing values or values outside the scale range
+## (`geom_col()`).
+\end{verbatim}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/mmc-demo-1.pdf}}
+\caption{\label{fig:mmc-demo}Maximum Material Condition Example}
+\end{figure}
+
+\subsection{6.2 Bonus Tolerance}\label{bonus-tolerance}
+
+When using MMC modifier, a \textbf{bonus tolerance} is granted as the feature departs from MMC. This maximizes functional tolerance while ensuring assembly.
+
+\begin{verbatim}
+## Warning in annotate("text", x = 9.9, y = 0.35, label = "Base Tolerance = 0.4
+## mm", : Ignoring unknown parameters: `fontsize`
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in annotate("text", x = 10.1, y = 0.65, label = "Bonus Tolerance =
+## Actual - MMC", : Ignoring unknown parameters: `fontsize`
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 2 rows containing missing values or values outside the scale range
+## (`geom_line()`).
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 2 rows containing missing values or values outside the scale range
+## (`geom_point()`).
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 2 rows containing missing values or values outside the scale range
+## (`geom_ribbon()`).
+\end{verbatim}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/bonus-tolerance-1.pdf}}
+\caption{\label{fig:bonus-tolerance}Bonus Tolerance Calculation}
+\end{figure}
+
+\section{7. Common GD\&T Applications}\label{common-gdt-applications}
+
+\subsection{7.1 Bolt Hole Pattern}\label{bolt-hole-pattern}
+
+\textbf{Problem}: Ensure bolt holes align for assembly.
+
+\textbf{Solution}: Use position tolerance relative to three datums.
+
+\begin{verbatim}
+## Warning in annotate("text", x = 5, y = 10, label = "10", fontsize = 3):
+## Ignoring unknown parameters: `fontsize`
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in annotate("text", x = 25, y = 5, label = "25", fontsize = 3, color =
+## "red", : Ignoring unknown parameters: `fontsize`
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in annotate("text", x = 25, y = 50, label = "Position: Ø1.5 @ MMC | A |
+## B", : Ignoring unknown parameters: `fontsize` and `bbox`
+\end{verbatim}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/bolt-pattern-1.pdf}}
+\caption{\label{fig:bolt-pattern}Bolt Hole Pattern with GD\&T}
+\end{figure}
+
+\subsection{7.2 Shaft Runout Control}\label{shaft-runout-control}
+
+\textbf{Problem}: Ensure rotating shaft doesn't wobble excessively.
+
+\textbf{Solution}: Apply total runout tolerance about the shaft axis (Datum A).
+
+\begin{verbatim}
+## Warning in annotate("text", x = 0.5, y = 6, label = "Datum A\\n(Shaft Axis)", :
+## Ignoring unknown parameters: `fontsize`
+\end{verbatim}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/shaft-runout-1.pdf}}
+\caption{\label{fig:shaft-runout}Shaft Runout Control}
+\end{figure}
+
+\section{8. Tolerance Stack-Up Analysis}\label{tolerance-stack-up-analysis}
+
+\subsection{8.1 Worst-Case Analysis}\label{worst-case-analysis}
+
+\begin{verbatim}
+## Warning in geom_text(aes(label = paste(Total_Length, "mm")), vjust = -0.5, :
+## Ignoring unknown parameters: `fontsize`
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 3 rows containing missing values or values outside the scale range
+## (`geom_col()`).
+\end{verbatim}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/stack-up-worst-1.pdf}}
+\caption{\label{fig:stack-up-worst}Worst-Case Tolerance Stack-Up}
+\end{figure}
+
+\subsection{8.2 Statistical Stack-Up (Optional Advanced Topic)}\label{statistical-stack-up-optional-advanced-topic}
+
+Statistical stack-up uses probability to reduce required tolerances:
+\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/stack-up-statistical-1.pdf}}
+
+\section{9. Practical Exercises}\label{practical-exercises}
+
+\subsection{Exercise 1: Interpreting a Feature Control Frame}\label{exercise-1-interpreting-a-feature-control-frame}
+
+\textbf{Given}: A part with the following FCF:
+
+\begin{verbatim}
+┌─────────────────────────────────┐
+│ ⊙    │ Ø0.8 │ A │ B │ C │
+│      │      │   │   │   │
+└─────────────────────────────────┘
+\end{verbatim}
+
+\textbf{Question}:
+- What type of control is being applied?
+- What is the tolerance value?
+- How many datums are referenced?
+- In what order should datums be established?
+
+\textbf{Answer}:
+This is a \textbf{position control} (⊙) with:
+- Tolerance: Ø0.8 mm (circular zone)
+- Three datums: A (primary), B (secondary), C (tertiary)
+- Datum establishment order: A (largest plane) → B (perpendicular) → C (tertiary reference)
+
+\subsection{Exercise 2: Applying GD\&T to a Bolt Hole}\label{exercise-2-applying-gdt-to-a-bolt-hole}
+
+\textbf{Design requirement}: Four bolt holes arranged in a square (0° spacing) with hole diameter Ø10 mm on a 40 mm × 40 mm grid. Holes must align within 0.5 mm for assembly.
+
+\textbf{Your task}: Create a GD\&T specification for this requirement.
+
+\textbf{Solution}:
+
+\begin{verbatim}
+- Primary Datum A: Bottom face (mounting surface)
+- Secondary Datum B: Left edge
+- Tertiary Datum C: Front edge
+- Position tolerance: ⊙ Ø0.5 @ A B C
+  (Circular tolerance zone, 0.5 mm diameter)
+\end{verbatim}
+
+\subsection{Exercise 3: Tolerance Stack-Up Problem}\label{exercise-3-tolerance-stack-up-problem}
+
+\textbf{Given}:
+- Part 1: 10.0 ± 0.1 mm
+- Part 2: 8.0 ± 0.15 mm
+- Part 3: 6.0 ± 0.1 mm
+
+\textbf{Calculate}:
+- Minimum total length
+- Maximum total length
+- Total tolerance stack-up
+
+\textbf{Solution}:
+
+\begin{verbatim}
+## Minimum total length: 23.65 mm\n
+\end{verbatim}
+
+\begin{verbatim}
+## Nominal total length: 24 mm\n
+\end{verbatim}
+
+\begin{verbatim}
+## Maximum total length: 24.35 mm\n
+\end{verbatim}
+
+\begin{verbatim}
+## Total tolerance stack-up: ± 0.35 mm\n
+\end{verbatim}
+
+\section{10. Classroom Activity: Interactive Tolerance Design}\label{classroom-activity-interactive-tolerance-design}
+
+\section{11. Summary and Key Takeaways}\label{summary-and-key-takeaways}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{GD\&T provides unambiguous communication} of engineering design intent
+\item
+  \textbf{Datum systems establish reference frameworks} that organize tolerance zones
+\item
+  \textbf{Bonus tolerances reward tighter fits} with additional positional tolerance
+\item
+  \textbf{The 14 geometric characteristics} address form, orientation, location, and runout
+\item
+  \textbf{Proper application} improves manufacturability, reduces cost, and ensures assembly
+\end{itemize}
+
+\section{12. Additional Resources}\label{additional-resources}
+
+\begin{itemize}
+\tightlist
+\item
+  ASME Y14.5-2018: Dimensioning and Tolerancing
+\item
+  ISO 1101: Geometrical Product Specifications
+\item
+  GD\&T training videos and webinars
+\item
+  CAD software built-in GD\&T annotation tools
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section*{Answers to Classroom Exercises}\label{answers-to-classroom-exercises}
+\addcontentsline{toc}{section}{Answers to Classroom Exercises}
+
+\textbf{Exercise 1 Answer}: Position control, Ø0.8 mm tolerance, 3 datums
+\textbf{Exercise 2 Answer}: Position ⊙ Ø0.5 @ A B C
+\textbf{Exercise 3 Answer}: Min = 23.55 mm, Max = 24.35 mm, Stack = ±0.4 mm
+
+\chapter{Engineering Fits and Tolerances}\label{fits}
+
+In precision manufacturing, the relationship between two mating parts---typically a hole and a shaft---is defined by the ``fit.'' Understanding imperial fits is crucial for ensuring that mechanical assemblies function correctly, whether they need to slide freely or be permanently locked together.
+
+\section{The Concept of Basis Systems}\label{the-concept-of-basis-systems}
+
+Before diving into the types of fits, we must establish the reference point for the tolerance. In the imperial system, we generally use one of two approaches:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Hole Basis System}: The hole size is kept constant (usually at the basic size), and the shaft size is varied to achieve the desired fit. This is the most common industry standard because it is easier to drill or ream a hole to a standard size than it is to precision-grind a shaft.
+\item
+  \textbf{Shaft Basis System}: The shaft size is kept constant, and the hole size is varied. This is typically reserved for specific cases, such as when a single shaft must host multiple components with different fit requirements.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Imperial Fits}\label{imperial-fits}
+
+Imperial fits are categorized by their function and the resulting ``allowance'' (the minimum clearance or maximum interference) between parts.
+
+\subsection*{a) Clearance Fits}\label{a-clearance-fits}
+\addcontentsline{toc}{subsection}{a) Clearance Fits}
+
+Clearance fits always provide a positive space between the hole and the shaft. This ensures the parts can move or rotate.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Running or Sliding Fits (RC)}: Intended to provide a similar running performance with suitable lubrication allowance.
+\item
+  \textbf{Locational Clearance Fits (LC)}: Designed for parts that are normally stationary but can be freely assembled or disassembled.
+\end{itemize}
+
+\subsection*{b) Interference Fits}\label{b-interference-fits}
+\addcontentsline{toc}{subsection}{b) Interference Fits}
+
+Interference fits (or ``press fits'') occur when the shaft is intentionally larger than the hole.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Force and Shrink Fits (FN)}: These require significant force or thermal expansion/contraction (e.g., heating the hole or freezing the shaft) to assemble. They are used for permanent attachments.
+\end{itemize}
+
+\subsection*{c) Transition Fits (Locational)}\label{c-transition-fits-locational}
+\addcontentsline{toc}{subsection}{c) Transition Fits (Locational)}
+
+Transition fits (\textbf{LT}) are the middle ground. Depending on the actual size of the manufactured parts within their tolerance zones, the result could be either a slight clearance or a slight interference. These are used where accurate location is important, but a small amount of clearance or interference is permissible.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/C20_F02_pg145} 
+
+}
+
+\caption{Fit Categories [@jensen2015interpreting]}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+\subsection{Description of Imperial Fits}\label{description-of-imperial-fits}
+
+The classes of fits are arranged in three general groups: running and sliding fits, locational fits, and force fits. These classifications ensure that mechanical components interact with the intended level of friction, precision, and permanence \citep{jensen2015interpreting}.
+
+\subsubsection{Running and Sliding Fits (RC)}\label{running-fits}
+
+Running and sliding fits are intended to provide a similar running performance, with suitable lubrication allowance, throughout the range of sizes. The clearances for the first two classes, used chiefly as slide fits, increase more slowly with the diameter than for the other classes so that accurate location is maintained even at the expense of free relative motion.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{RC 1 Close sliding fits}: Intended for the accurate location of parts that must assemble without perceptible play.
+\item
+  \textbf{RC 2 Sliding fits}: Intended for accurate location, but with greater maximum clearance than class RC 1. Parts move and turn easily but are not intended to run freely; larger sizes may seize with small temperature changes.
+\item
+  \textbf{RC 3 Precision running fits}: The closest fits expected to run freely. Intended for precision work at slow speeds and light journal pressures. Not suitable where appreciable temperature differences are likely.
+\item
+  \textbf{RC 4 Close running fits}: Intended chiefly for running fits on accurate machinery with moderate surface speeds and journal pressures, where accurate location and minimum play are desired.
+\item
+  \textbf{RC 5 and RC 6 Medium running fits}: Intended for higher running speeds, heavy journal pressures, or both.
+\item
+  \textbf{RC 7 Free running fits}: Intended for use where accuracy is not essential, or where large temperature variations are likely to be encountered.
+\item
+  \textbf{RC 8 and RC 9 Loose running fits}: Intended for use where wide commercial tolerances may be necessary, together with an allowance on the external member.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_RC1_4} 
+
+}
+
+\caption{[RC1 to RC4](images/ANSI_ASME_B41_RC1_4.png)}\label{fig:unnamed-chunk-7}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_RC5_9} 
+
+}
+
+\caption{[RC5 to RC9](images/ANSI_ASME_B41_RC5_9.png)}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Locational Fits (LC, LT, and LN)}\label{locational-fits}
+
+Locational fits are intended to determine only the location of the mating parts; they may provide rigid or accurate location (as with interference fits) or provide some freedom of location (as with clearance fits).
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{LC Locational clearance fits}: Intended for parts that are normally stationary but can be freely assembled or disassembled. They range from snug fits to looser fastener fits.
+\item
+  \textbf{LT Locational transition fits}: A compromise between clearance and interference for applications where accuracy of location is important but a small amount of either clearance or interference is permissible.
+\item
+  \textbf{LN Locational interference fits}: Used where accuracy of location is of prime importance, providing rigidity and alignment with no special requirements for bore pressure.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_LC1_5} 
+
+}
+
+\caption{[LC1 to LC5](images/ANSI_ASME_B41_LC1_5.png)}\label{fig:unnamed-chunk-9}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_LC6_11} 
+
+}
+
+\caption{[LC6 to LC11](images/ANSI_ASME_B41_LC6_11.png)}\label{fig:unnamed-chunk-10}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_LT1_6} 
+
+}
+
+\caption{[LT1 to LT6](images/ANSI_ASME_B41_LT1_6.png)}\label{fig:unnamed-chunk-11}
+\end{figure}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Force Fits (FN)}\label{force-fits}
+
+Force or shrink fits constitute a special type of interference fit, normally characterized by maintenance of constant bore pressures throughout the range of sizes. As shown in the mathematical section of Chapter \ref{imperial-fits}, the interference varies almost directly with diameter.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{FN 1 Light drive fits}: Require light assembly pressures and produce more or less permanent assemblies. Suitable for thin sections or long fits.
+\item
+  \textbf{FN 2 Medium drive fits}: Suitable for ordinary steel parts or for shrink fits on light sections. These are the tightest fits typically used with high-grade cast-iron external members.
+\item
+  \textbf{FN 3 Heavy drive fits}: Suitable for heavier steel parts or for shrink fits in medium sections.
+\item
+  \textbf{FN 4 and FN 5 Force fits}: Suitable for parts that can be highly stressed or for shrink fits where the heavy pressing forces required are impractical.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_FN1_5} 
+
+}
+
+\caption{[FN1 to FN5 small diameters](images/ANSI_ASME_B41_FN1_5.png)}\label{fig:unnamed-chunk-12}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_FN1_5_big} 
+
+}
+
+\caption{[FN1 to FN5 big diameters](images/ANSI_ASME_B41_FN1_5_big.png)}\label{fig:unnamed-chunk-13}
+\end{figure}
+
+\begin{quote}
+\textbf{Note:} For other numerical limits of clearance or interference for these classes, refer to the standard ANSI B4.1 tables.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Metric Fits and the ISO Letter System}\label{metric-fits}
+
+In precision engineering, the relationship between two mating parts---typically a hole and a shaft---is defined by a ``fit.'' The ISO system uses a specific alphanumeric code to define the tolerances of these parts, ensuring that components manufactured in different locations will assemble correctly according to \citep{ansi_b41}.
+
+\subsection{The Letter System: Holes vs.~Shafts}\label{the-letter-system-holes-vs.-shafts}
+
+The fundamental rule of the metric tolerance system is the distinction between internal and external features through the use of character casing:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Capital Letters (A--ZC):} Used exclusively for \textbf{Internal Features} (e.g., Holes).
+\item
+  \textbf{Lower-case Letters (a--zc):} Used exclusively for \textbf{External Features} (e.g., Shafts).
+\end{itemize}
+
+\subsection{Alphabetical Progression and the ``H'' Pivot}\label{alphabetical-progression-and-the-h-pivot}
+
+The ``H'' (for holes) and ``h'' (for shafts) designations serve as the central pivot point of the metric system. In a standard hole-basis system, an \textbf{H} hole has a lower deviation of zero, meaning the hole is never smaller than the nominal ``Basic Size.''
+
+The type of fit is determined by where the mating part's letter falls in the alphabet relative to this pivot:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Earlier in the Alphabet (A--G / a--g):} When these letters are combined with an H/h feature, they result in a \textbf{Clearance Fit}. For example, an \(f7\) shaft is significantly smaller than the nominal size, ensuring space between parts.
+\item
+  \textbf{The Middle (H / h):} These represent the basic sizes where the tolerance zone sits exactly on the zero line.
+\item
+  \textbf{Later in the Alphabet (P--ZC / p--zc):} Letters appearing after H/h (specifically starting around \(p\) for shafts) produce an \textbf{Interference Fit}. These parts are mathematically larger than the hole, requiring force for assembly. Letters between G and P (like \(j, k, m, n\)) typically result in \textbf{Transition Fits}.
+\end{itemize}
+
+\begin{quote}
+\textbf{Note:} Either the shaft or the hole must have an \textbf{H/h}. Both can have it.
+\end{quote}
+
+The \textbf{number} following the letter (e.g., the `7' in \(H7\)) represents the \textbf{International Tolerance Grade (IT)}. This represents the magnitude of the tolerance zone. Mathematically, as the IT grade increases, the manufacturing window widens, meaning a looser requirement for precision.
+
+Please see a description of the preferred metric fits below. Select from those if possible.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/DescriptionPreferredMetric} 
+
+}
+
+\caption{[Preferred Sizes (metric)](images/DescriptionPreferredMetric.png)}\label{fig:unnamed-chunk-14}
+\end{figure}
+
+\subsection{Metric Hole Basis Fits}\label{metric-fits-hole}
+
+In hole basis fits the hole always has the \textbf{H}. Preferred combinations of hole and shaft sizes can be found in this chart below.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/PreferredHoleBasis_metric} 
+
+}
+
+\caption{[Preferred Hole Basis Sizes (metric)](images/PreferredHoleBasis_metric.png)}\label{fig:unnamed-chunk-15}
+\end{figure}
+
+Depending on the combination of the hole and shaft tolerance zones, fits are categorized into two primary types:
+
+\subsubsection{\texorpdfstring{\textbf{Metric Clearance Fit:}}{Metric Clearance Fit:}}\label{metric-clearance-fit}
+
+The shaft is always smaller than the hole. This allows for rotation or sliding.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_metric_clearance1} 
+
+}
+
+\caption{[Metric Clearance Fits Hole Basis Part 1](images/ANSI_ASME_B41_metric_clearance1.png)}\label{fig:unnamed-chunk-16}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_metric_clearance2} 
+
+}
+
+\caption{[Metric Clearance Fits Hole Basis Part 2](images/ANSI_ASME_B41_metric_clearance2.png)}\label{fig:unnamed-chunk-17}
+\end{figure}
+
+\subsubsection{\texorpdfstring{\textbf{Metric Interference Fit:}}{Metric Interference Fit:}}\label{metric-interference-fit}
+
+The shaft is always larger than the hole. Assembly usually requires force, heat expansion, or cryo-shrinking.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_metric_transition1} 
+
+}
+
+\caption{[Metric Interference Fits Hole Basis Part 1](images/ANSI_ASME_B41_metric_transition1.png)}\label{fig:unnamed-chunk-18}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_metric_transition2} 
+
+}
+
+\caption{[Metric Interference Fits Hole Basis Part 2](images/ANSI_ASME_B41_metric_transition2.png)}\label{fig:unnamed-chunk-19}
+\end{figure}
+
+\subsection{Metric Shaft Basis Fits}\label{metric-fits-shaft}
+
+In shaft basis fits the shaft always has the \textbf{h}. Preferred combinations of hole and shaft sizes can be found in this chart below.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/PreferredShaftBasis_metric} 
+
+}
+
+\caption{[Preferred Shaft Basis Sizes (metric)](images/PreferredShaftBasis_metric.png)}\label{fig:unnamed-chunk-20}
+\end{figure}
+
+Depending on the combination of the hole and shaft tolerance zones, fits are categorized into two primary types:
+
+\subsubsection{\texorpdfstring{\textbf{Metric Clearance Fit:}}{Metric Clearance Fit:}}\label{metric-clearance-fit-1}
+
+The shaft is always smaller than the hole. This allows for rotation or sliding.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_metric_clearance1S} 
+
+}
+
+\caption{[Metric Clearance Fits Shaft Basis Part 1](images/ANSI_ASME_B41_metric_clearance1S.png)}\label{fig:unnamed-chunk-21}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_metric_clearance2S} 
+
+}
+
+\caption{[Metric Clearance Fits Shaft Basis Part 2](images/ANSI_ASME_B41_metric_clearance2S.png)}\label{fig:unnamed-chunk-22}
+\end{figure}
+
+\subsubsection{\texorpdfstring{\textbf{Metric Interference Fit:}}{Metric Interference Fit:}}\label{metric-interference-fit-1}
+
+The shaft is always larger than the hole. Assembly usually requires force, heat expansion, or cryo-shrinking.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_metric_transition1S} 
+
+}
+
+\caption{[Metric Interference Fits Shaft Basis Part 1](images/ANSI_ASME_B41_metric_transition1S.png)}\label{fig:unnamed-chunk-23}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{images/ANSI_ASME_B41_metric_transition2S} 
+
+}
+
+\caption{[Metric Interference Fits Shaft Basis Part 2](images/ANSI_ASME_B41_metric_transition2S.png)}\label{fig:unnamed-chunk-24}
+\end{figure}
+
+\chapter{Sharing your book}\label{sharing-your-book}
+
+\section{Publishing}\label{publishing}
+
+HTML books can be published online, see: \url{https://bookdown.org/yihui/bookdown/publishing.html}
+
+\section{404 pages}\label{pages}
+
+By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a \texttt{\_404.Rmd} or \texttt{\_404.md} file to your project root and use code and/or Markdown syntax.
+
+\section{Metadata for sharing}\label{metadata-for-sharing}
+
+Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the \texttt{index.Rmd} YAML. To setup, set the \texttt{url} for your book and the path to your \texttt{cover-image} file. Your book's \texttt{title} and \texttt{description} are also used.
+
+This \texttt{gitbook} uses the same social sharing data across all chapters in your book- all links shared will look the same.
+
+Specify your book's source repository on GitHub using the \texttt{edit} key under the configuration options in the \texttt{\_output.yml} file, which allows users to suggest an edit by linking to a chapter's source file.
+
+Read more about the features of this output format here:
+
+\url{https://pkgs.rstudio.com/bookdown/reference/gitbook.html}
+
+Or use:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?bookdown}\SpecialCharTok{::}\NormalTok{gitbook}
+\end{Highlighting}
+\end{Shaded}
+
+
+\bibliography{book.bib,packages.bib}
+
+\end{document}
